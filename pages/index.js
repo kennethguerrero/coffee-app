@@ -34,8 +34,7 @@ export default function Home() {
                         <p>Check out and try our Barako Drip Solo.</p>
                     </a>
 
-                    <a href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                    className="card" target="_blank">
+                    <a href="https://www.facebook.com/btngn.ph/videos/1252542391595023/" className="card" target="_blank">
                         <img src="/newsDripHow.PNG" />
                         <h3>Barako Drip &rarr;</h3>
                         <p>Here's how to take our Barako Drip.</p>
