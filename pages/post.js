@@ -4,7 +4,7 @@ import Link from "next/link";
 const Post = ({ url, id }) => {
     return (
         <div>
-            <Link href="/post[id]" as={`/post/${id}`}>
+            <Link href="/post/[id]" as={`/post/${id}`}>
                 <img src={url} />
             </Link>
             <style jsx> {`
