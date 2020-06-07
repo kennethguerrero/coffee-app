@@ -54,7 +54,7 @@ const UserInput = () => {
             const customer = {type: product.name, density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
             localStorage.setItem('order', JSON.stringify(customer));
 
-            window.location.href = "/forms";
+            router.push("/forms")
         },
         [nameValue]
     );
