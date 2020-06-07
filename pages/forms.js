@@ -1,10 +1,12 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import React, { useState, useCallback } from "react";
+import { router, useRouter } from "next/router";
 
 export default function Forms() {
 
     const [nameValue, setNameValue] = useState("");
+    const router = useRouter();
 
     let isManila;
     if (nameValue.shipping == "Within Metro Manila") {
@@ -57,7 +59,7 @@ export default function Forms() {
 
             localStorage.setItem('order', JSON.stringify(customer));
         
-            window.location.href = "/summary";
+            router.push("/summary")
         },
         [nameValue]
         // setNameValue("");
