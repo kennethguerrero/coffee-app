@@ -40,76 +40,69 @@ export default function Summary() {
                         <strong>Reminder:</strong> Please save a screenshot of your order details.
                     </div>
 
-                    <div className="divContainer">
-
-                        <div className="divContent">
-                            <div className="labelTitle">Order:</div> 
-                            <div>{nameValue.quantity} {nameValue.type} {nameValue.density}</div>
-                        </div>
-
-                        <div className="divContent">
-                            <div className="labelTitle">Breakdown:</div> 
+                    <div className="labelTitle">Breakdown:</div> 
                             
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td style={{ width: "75%" }}>Coffee</td>
-                                        <td style={{ width: "25%" }}>&#8369; {nameValue.coffeePrice}.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Quantity</td>
-                                        <td>{nameValue.quantity}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style={{ paddingRight: "40px" }}>Shipping fee</td>
-                                        <td>
-                                            <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.shippingFee}.00</span>
-                                            <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td>
-                                            <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.price}.00</span>
-                                            <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style={{ width: "75%" }}>Coffee</td>
+                                <td style={{ width: "25%" }}>&#8369; {nameValue.coffeePrice}.00</td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td>{nameValue.quantity}</td>
+                            </tr>
+                            <tr>
+                                <td style={{ paddingRight: "40px" }}>Shipping fee</td>
+                                <td>
+                                    <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.shippingFee}.00</span>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>
+                                    <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.price}.00</span>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Order:</div> 
+                        <div>{nameValue.quantity} {nameValue.type} {nameValue.density}</div>
+                    </div>
 
-                        <div className="divContent">
-                            <div className="labelTitle">Full Name:</div> 
-                            <div>{nameValue.fullName}</div>
-                        </div>
-                        <div className="divContent">
-                            <div className="labelTitle">Shipping:</div> 
-                            <div>{nameValue.shipping}</div>
-                        </div>
-                        <div className="divContent">
-                            <div className="labelTitle">Address:</div> 
-                            <div>{nameValue.address}</div>
-                        </div>
-                        <div className="divContent">
-                            <div className="labelTitle">Phone Number:</div> 
-                            <div>{nameValue.phoneNumber}</div>
-                        </div>
-                        <div className="divContent">
-                            <div className="labelTitle">Landmarks and Remarks:</div> 
-                            <div>{nameValue.landmark}</div>
-                        </div>
-                        <div className="divContent">
-                            <div className="labelTitle">Email Address:</div> 
-                            <div>{nameValue.emailAddress}</div>
-                        </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Full Name:</div> 
+                        <div>{nameValue.fullName}</div>
+                    </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Shipping:</div> 
+                        <div>{nameValue.shipping}</div>
+                    </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Address:</div> 
+                        <div>{nameValue.address}</div>
+                    </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Phone Number:</div> 
+                        <div>{nameValue.phoneNumber}</div>
+                    </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Landmarks and Remarks:</div> 
+                        <div>{nameValue.landmark}</div>
+                    </div>
+                    <div className="divContent">
+                        <div className="labelTitle">Email Address:</div> 
+                        <div>{nameValue.emailAddress}</div>
+                    </div>
 
-                        <div className="divButton">
-                            <Link href="/final">
-                                <button className="btnSubmit">FINISH</button>
-                            </Link>
-                        </div>
-
+                    <div className="divButton">
+                        <Link href="/final">
+                            <button className="btnSubmit">FINISH</button>
+                        </Link>
                     </div>
 
                 </main>
@@ -170,6 +163,7 @@ export default function Summary() {
                         opacity: 1;
                         transition: opacity 0.6s;
                         margin-bottom: 15px;
+                        width: 95%;
                     }
                     .closebtn {
                         margin-left: 15px;
@@ -196,16 +190,14 @@ export default function Summary() {
                     }
                     .divButton {
                         margin-top: 20px;
+                        width: 95%;
                     }
                     .closebtn:hover {
                         color: black;
                     }
-                    .divContent {
+                    .divContent, table {
                         margin-bottom: 20px;
-                    }
-                    .divContainer {
-                        max-width: 800px;
-                        width: 18rem;
+                        width: 95%;
                     }
                 `}</style>
 
