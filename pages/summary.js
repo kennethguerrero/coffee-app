@@ -63,7 +63,7 @@ export default function Summary() {
                                 <td>Total</td>
                                 <td>
                                     <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.price}.00</span>
-                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, total price is still subject to change.</span>
                                 </td>
                             </tr>
                         </tbody>

@@ -22,7 +22,7 @@ export default function Home() {
                         <p>Check us out on BeautyMNL’s Wellness Section under Drinks</p>
                     </a>
 
-                    <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh" className="card">
+                    <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh" className="card" target="_blank">
                         <img src="/newsNaturale.jpg" />
                         <h3>Naturale Market &rarr;</h3>
                         <p>Yes to Local and Sustainable Living!</p>

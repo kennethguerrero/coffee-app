@@ -19,8 +19,8 @@ export default function About() {
 
                     <p>Send us the screenshot of your order details here:</p>
                     <div className="divContent">
-                        <a href="mailto:btngn.ph@gmail.com? Subject=Online%Order"><strong>Gmail</strong></a><br/>
-                        <a href="https://www.facebook.com/btngn.ph" target="_blank"><strong>Facebook</strong></a><br/>
+                        <a href="mailto:btngn.ph@gmail.com?subject=Online Order&body=Hi BTNGÑ,%0D%0A%0D%0AAttached is my order details.%0D%0A%0D%0AThank you.%0D%0A%0D%0A"><strong>Gmail</strong></a><br/>
+                        <a href="https://www.messenger.com/t/300946867439223?fbclid=IwAR0ZAm-nIimatsLfpjhbm_2eqijKNRZcTZ9mEuGZGYZEZ1eGX1lwTbHHd7c" target="_blank"><strong>Facebook</strong></a><br/>
                         <a href="https://www.instagram.com/btngn.ph" target="_blank"><strong>Instagram</strong></a>
                     </div>     
 
@@ -104,7 +104,7 @@ export default function About() {
                         margin-bottom: 3rem;
                     }
                     .divContent {
-                        margin-bottom: 15px;
+                        margin-bottom: 4rem;
                     }
                 `}
                 </style>
