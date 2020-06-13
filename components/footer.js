@@ -33,7 +33,7 @@ const Footer = () => (
                     Quick Links
                 </div>
                 <div>
-                    <Link href="/post/1">
+                    <Link href="/beans">
                         <a>Beans</a>
                     </Link>
                 </div>
