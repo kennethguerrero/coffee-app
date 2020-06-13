@@ -16,6 +16,14 @@ export default function Summary() {
         warning = false;
     }
 
+    let isManila;
+    if (nameValue.shipping == "Within Metro Manila") {
+        isManila = true;
+    }
+    else {
+        isManila = false;
+    }
+
     useEffect(() => {
         const result = localStorage.getItem('order');
         setNameValue(JSON.parse(result));
@@ -56,16 +64,23 @@ export default function Summary() {
                                 <td style={{ paddingRight: "40px" }}>Shipping fee</td>
                                 <td>
                                     <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.shippingFee}.00</span>
-                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping fee is still subject to change.</span>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>--</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Total</td>
                                 <td>
                                     <span style={{ display: warning ? "none" : "block" }}>&#8369; {nameValue.price}.00</span>
-                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, total price is still subject to change.</span>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>--</span>
                                 </td>
                             </tr>
+
+                            <tr>
+                                <td colSpan="2" style={{ textAlign: "center" }}>
+                                    <span className="summaryWarning" style={{ color: "green", display: warning ? "block" : "none" }}>For orders more than 3000g/3kg, shipping and total fee are still subject to change.</span>
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
 
@@ -80,7 +95,12 @@ export default function Summary() {
                     </div>
                     <div className="divContent">
                         <div className="labelTitle">Shipping:</div> 
-                        <div>{nameValue.shipping}</div>
+                        <div>
+                            {nameValue.shipping}&nbsp; 
+                            <span style={{ display: isManila ? "inline" : "none" }}>
+                                ({nameValue.courier})
+                            </span>
+                        </div>
                     </div>
                     <div className="divContent">
                         <div className="labelTitle">Address:</div> 

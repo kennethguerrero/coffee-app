@@ -8,22 +8,6 @@ export default function Forms() {
     const [nameValue, setNameValue] = useState("");
     const router = useRouter();
 
-    let isManila;
-    if (nameValue.shipping == "Within Metro Manila") {
-        isManila = true;
-    }
-    else {
-        isManila = false;
-    }
-
-    let outsideManila;
-    if (nameValue.shipping == "Outside Metro Manila") {
-        outsideManila = true;
-    }
-    else {
-        outsideManila = false;
-    }
-
     const handleNameChange = (event) => {
         const fieldName = event.target.getAttribute("name");
         setNameValue({
@@ -40,22 +24,30 @@ export default function Forms() {
             const parsed = JSON.parse(existing);
 
             var convertedShipFee;
-            switch (nameValue.shipping) {
-                case "Within Metro Manila":
-                    convertedShipFee = 100;
-                    break;
-                case "Outside Metro Manila":
-                    convertedShipFee = 250;
-                    break;
-                default:
-                    convertedShipFee = 0;
+            if (nameValue.shipping == "Within Metro Manila") {
+                switch (nameValue.courier) {
+                    case "Fifth Express":
+                        convertedShipFee = 100;
+                        break;
+                    case "Grab":
+                        convertedShipFee = 0;
+                        break;
+                    case "Lalamove":
+                        convertedShipFee = 0;
+                        break;
+                    default:
+                        convertedShipFee = 0;
+                }
             }
-
+            else {
+                convertedShipFee = 250;
+            }
+            
             const totalPrice = convertedShipFee + parsed.price;
 
-            const customer = {fullName: nameValue.fullName, shipping: nameValue.shipping, address: nameValue.address, phoneNumber: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, type: parsed.type, density: parsed.density, quantity: parsed.quantity, price: totalPrice, multipliedDensity: parsed.multipliedDensity, shippingFee: convertedShipFee, coffeePrice: parsed.coffeePrice};
+            const customer = {fullName: nameValue.fullName, shipping: nameValue.shipping, address: nameValue.address, phoneNumber: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, type: parsed.type, density: parsed.density, quantity: parsed.quantity, price: totalPrice, multipliedDensity: parsed.multipliedDensity, shippingFee: convertedShipFee, coffeePrice: parsed.coffeePrice, courier: nameValue.courier};
 
-            //console.log(totalPrice);
+            // console.log(totalPrice);
 
             localStorage.setItem('order', JSON.stringify(customer));
         
@@ -64,6 +56,40 @@ export default function Forms() {
         [nameValue]
         // setNameValue("");
     ); 
+
+    let isManila;
+    let isFifth;
+    let isGrabMove;
+
+    if (nameValue.shipping == "Within Metro Manila") {
+        isManila = true;
+
+        if (nameValue.courier == "Fifth Express") {
+            isFifth = true;
+        }
+        else {
+            isFifth = false;
+        }
+
+        if (nameValue.courier == "Grab" || nameValue.courier == "Lalamove") {
+            isGrabMove = true;
+        }
+        else {
+            isGrabMove = false;
+        }
+
+    }
+    else {
+        isManila = false;
+    }
+
+    let outsideManila;
+    if (nameValue.shipping == "Outside Metro Manila") {
+        outsideManila = true;
+    }
+    else {
+        outsideManila = false;
+    }    
 
     return (
         <Layout>
@@ -94,11 +120,20 @@ export default function Forms() {
                                     <option value="Within Metro Manila">Within Metro Manila</option>
                                     <option value="Outside Metro Manila">Outside Metro Manila</option>
                                 </select>&nbsp;
-                                <span style={{ display: isManila ? "inline" : "none", fontSize: "13px" }}>
+
+                                <select name="courier" value={nameValue.courier} onChange={handleNameChange} style={{ display: isManila ? "inline" : "none" }} required={ isManila ? true : false }>
+                                    <option value=""></option>
+                                    <option value="Fifth Express">Fifth Express</option>
+                                    <option value="Grab">Grab</option>
+                                    <option value="Lalamove">Lalamove</option>
+                                </select>
+                                <br />
+
+                                <span style={{ display: isFifth ? "inline" : "none", fontSize: "13px" }}>
                                     Courier: Fifth Express - &#8369;100.00 <br/><br/>
                                 </span>
-                                <span style={{ display: isManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
-                                    If you prefer other shipping options like Lalamove/Grab, you may directly inform us.
+                                <span style={{ display: isGrabMove ? "inline" : "none", fontSize: "13px", color: "green" }}>
+                                    For other shipping options like Lalamove or Grab, booking c/o customer.
                                 </span>
                                 <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px" }}>
                                     Courier: LBC &#8369;250.00
