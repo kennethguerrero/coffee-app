@@ -85,7 +85,7 @@ export default function Products ({ products }) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch("http://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
+    const res = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
     const products = await res.json();
 
     return {
