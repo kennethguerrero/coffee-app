@@ -29,8 +29,8 @@ const PageBeans = () => {
                 case "50g":
                     coffeePrice = 45;
                     break;
-                case "80g":
-                    coffeePrice = 70;
+                case "90g":
+                    coffeePrice = 80;
                     break;
                 case "100g":
                     coffeePrice = 80;

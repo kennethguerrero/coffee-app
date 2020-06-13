@@ -1,14 +1,12 @@
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 import Head from "next/head";
-import fetch from "isomorphic-unfetch";
-import { useEffect, useState, useCallback } from 'react';
-import { useRouter } from 'next/router';
-import Loader from 'react-loader-spinner';
+import { useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/router";
 
-const UserInput = () => {
+const PageGround = () => {
 
-    const [product, setProduct] = useState();
     const [nameValue, setNameValue] = useState("");
+    const [product, setProduct] = useState();
     const router = useRouter();
 
     const handleNameChange = (event) => {
@@ -51,46 +49,13 @@ const UserInput = () => {
             }
             const totalPrice = nameValue.quantity * coffeePrice;
 
-            const customer = {type: product.name, density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
+            const customer = {type: "Barako Ground", density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
             localStorage.setItem('order', JSON.stringify(customer));
 
             router.push("/forms")
         },
         [nameValue]
     );
-
-    useEffect(() => {
-        const getProducts = async () => {
-            const { id } = router.query;
-            // console.log("id", id);
-            const response = await fetch("http://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
-            let data
-    
-            try {
-                data = await response.json()
-            } catch (err) {
-            } finally {
-                const output = data.find((item) => item.id === +id)
-                if (output) {
-                    setProduct(output)
-                }
-            }
-        }
-        if (router.query.id) {
-            getProducts()
-        }
-    }, [router])
-
-    if (!product) {
-        return (
-            <div style={{ textAlign: "center", transform: "translate( 1%, 300%)" }}>
-                <Loader 
-                    type="Puff"
-                    color="#404040"
-                    secondaryColor="#404040" />
-            </div>
-        );
-    }
 
     var coffeePrice;
     switch (nameValue.density) {
@@ -122,37 +87,39 @@ const UserInput = () => {
         // console.log(coffeePrice);
     }
 
-    const myOption = product.densities.map(opt => {
-        return <option key={opt} value={opt}>{opt}</option>
-    })
-
     return (
         <Layout>
             <div className="container">
                 <Head>
-                    <title>{product.name}</title>
+                    <title>Barako Ground</title>
                     <link rel="icon" href="/coffeeicon.png" />
                 </Head>
 
                 <main>
-                    <h1 className="title">{product.name}</h1>
+                    <h1 className="title">Barako Ground</h1>
 
                     <div className="grid">
-                        <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
-                            <p>{product.description}</p><br />
-                            <img src={product.url} /><br />
-                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{coffeePrice}.00</span>
+                       <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+                           <p>A bag of fine ground coffee with a robust flavor.</p><br />
+                           <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162315/large/RE_2653.jpg?1556536940" /><br />
+                           <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{coffeePrice}.00</span>
 
                             <form>
                                 <select name="density" value={nameValue.density} onChange={handleNameChange} required>
                                     <option value=""></option>
-                                    {myOption}
+                                    <option value="50g">50g</option>
+                                    <option value="100g">100g</option>
+                                    <option value="200g">200g</option>
+                                    <option value="300g">300g</option>
+                                    <option value="500g">500g</option>
                                 </select>&nbsp;
-                                <input type="number" id="txtQuantity" name="quantity" placeholder="quantity" value={nameValue.quantity || "" } onChange={handleNameChange} required /> &nbsp;
-                                <input className="btnSubmit" type="submit" value="CHECK OUT" />
+                                <input type="number" id="txtQuantity" value={nameValue.quantity || "" } onChange={handleNameChange} placeholder="quantity" name="quantity" required />&nbsp;
+                                <input type="submit" className="btnSubmit" value=" CHECK OUT" />
                             </form>
-                        </div>
+
+                        </div> 
                     </div>
+
                 </main>
 
                 <style jsx>{`
@@ -218,9 +185,10 @@ const UserInput = () => {
                         }
                     }
                 `}</style>
+
             </div>
         </Layout>
     )
 }
 
-export default UserInput;
+export default PageGround;

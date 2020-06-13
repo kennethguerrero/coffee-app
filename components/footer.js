@@ -38,22 +38,22 @@ const Footer = () => (
                     </Link>
                 </div>
                 <div>
-                    <Link href="/post/2">
+                    <Link href="/grounds">
                         <a>Ground</a>
                     </Link>
                 </div>
                 <div>
-                    <Link href="">
+                    <Link href="/drip">
                         <a>Drip</a>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/post/3">
+                    <Link href="/tablea">
                         <a>Tablea</a>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/post/4">
+                    <Link href="/pepper">
                         <a>Pepper</a>
                     </Link>
                 </div>

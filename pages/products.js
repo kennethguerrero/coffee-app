@@ -4,7 +4,20 @@ import React, { useEffect, useState } from "react";
 import fetch from "isomorphic-unfetch";
 import Post from "./post";
 
-export default function Products ({ products }) {
+const ProductsList = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getProducts = async () => {
+            const response = await fetch("http://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
+            const data = await response.json();
+            setProducts(data);
+        };
+
+        getProducts();
+    }, []);
+
     return (
         <Layout>
             <div className="container">
@@ -19,13 +32,13 @@ export default function Products ({ products }) {
                     </h1>
 
                     <div className="grid">
-                        {products.map((product) => (
+                        {products.map(product => (
                             <Post {...product} key={product.id} />
                         ))}
                     </div>
 
                 </main>
-
+                
                 <style jsx> {`
                     img {
                         width: 70%; 
@@ -80,17 +93,10 @@ export default function Products ({ products }) {
                 </style>
 
             </div>
+            
         </Layout>
     )
+
 }
 
-export async function getStaticProps() {
-    const res = await fetch("http://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
-    const products = await res.json();
-
-    return {
-        props: {
-            products,
-        },
-    }
-}
+export default ProductsList;
