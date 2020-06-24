@@ -29,6 +29,16 @@ export default function Summary() {
         setNameValue(JSON.parse(result));
     }, []);
 
+    const handleSubmit = () => {
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: nameValue.fullName, address: nameValue.address, phone: nameValue.phoneNumber })
+        });
+
+        console.log("Order complete!");
+    }
+
     return (
         <Layout>
             <div className="container">
@@ -121,7 +131,7 @@ export default function Summary() {
 
                     <div className="divButton">
                         <Link href="/final">
-                            <button className="btnSubmit">FINISH</button>
+                            <button className="btnSubmit" onClick={handleSubmit}>FINISH</button>
                         </Link>
                     </div>
 
