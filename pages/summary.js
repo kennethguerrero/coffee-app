@@ -194,6 +194,7 @@ export default function Summary() {
                         transition: opacity 0.6s;
                         margin-bottom: 15px;
                         width: 95%;
+                        text-align: center;
                     }
                     .closebtn {
                         margin-left: 15px;
