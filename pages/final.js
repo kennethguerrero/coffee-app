@@ -15,14 +15,7 @@ export default function About() {
                         Congratulations!
                     </h1>
 
-                    <h2>Your order has been complete.</h2>
-
-                    <p>Send us the screenshot of your order details here:</p>
-                    <div className="divContent">
-                        <a href="mailto:btngn.ph@gmail.com?subject=Online Order&body=Hi BTNGÑ,%0D%0A%0D%0AAttached is my order details.%0D%0A%0D%0AThank you.%0D%0A%0D%0A"><strong>Gmail</strong></a><br/>
-                        <a href="https://www.messenger.com/t/300946867439223?fbclid=IwAR0ZAm-nIimatsLfpjhbm_2eqijKNRZcTZ9mEuGZGYZEZ1eGX1lwTbHHd7c" target="_blank"><strong>Facebook</strong></a><br/>
-                        <a href="https://www.instagram.com/btngn.ph" target="_blank"><strong>Instagram</strong></a>
-                    </div>     
+                    <h2>Your order has been placed and we will contact you shortly.</h2>    
 
                     <table>
                         <tbody>

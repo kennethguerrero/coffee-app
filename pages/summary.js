@@ -33,7 +33,7 @@ export default function Summary() {
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: nameValue.fullName, address: nameValue.address, phone: nameValue.phoneNumber })
+            body: JSON.stringify({ name: nameValue.fullName, shipping: nameValue.shipping, courier: nameValue.courier, address: nameValue.address, phone: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, quantity: nameValue.quantity, type: nameValue.type,density: nameValue.density})
         });
 
         console.log("Order complete!");
@@ -55,7 +55,7 @@ export default function Summary() {
                     <br />
                     <div className="divAlert" style={{ display: alert ? "block" : "none" }}>
                         <span className="closebtn" onClick={() => setAlert(false)}>&times;</span>
-                        <strong>Reminder:</strong> Please save a screenshot of your order details.
+                        <strong>Reminder:</strong> Save a screenshot for your own copy.
                     </div>
 
                     <div className="labelTitle">Breakdown:</div> 
