@@ -28,13 +28,13 @@ export default function Home() {
                         <p>Yes to Local and Sustainable Living!</p>
                     </a>
 
-                    <a href="https://www.instagram.com/p/B9PDPGYHMl_/" className="card" target="_blank">
+                    <a href="news2" className="card">
                         <img src="/newsDripSolo.PNG" />
                         <h3>On the go? &rarr;</h3>
                         <p>Check out and try our Barako Drip Solo.</p>
                     </a>
 
-                    <a href="https://www.facebook.com/btngn.ph/videos/1252542391595023/" className="card" target="_blank">
+                    <a href="/news1" className="card">
                         <img src="/newsDripHow.PNG" />
                         <h3>Barako Drip &rarr;</h3>
                         <p>Here's how to take our Barako Drip.</p>

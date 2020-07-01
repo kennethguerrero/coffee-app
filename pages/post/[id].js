@@ -76,6 +76,7 @@ const UserInput = () => {
                 }
             }
         }
+
         if (router.query.id) {
             getProducts()
         }
@@ -91,7 +92,7 @@ const UserInput = () => {
             </div>
         );
     }
-
+    
     var coffeePrice;
     switch (nameValue.density) {
         case "50g":
@@ -115,6 +116,17 @@ const UserInput = () => {
         default:
             coffeePrice = 0;
     }
+    
+    let finalPrice;
+    let finalQuantity = nameValue.quantity;
+
+    finalPrice = coffeePrice * nameValue.quantity;
+
+    if (isNaN(finalPrice)){
+        finalPrice = 0;
+    }
+    
+    console.log('final price:'+finalPrice + ' ' + 'coffee price:'+coffeePrice + ' ' + 'quantity:'+ (finalQuantity));
 
     let displayPrice = false;
     if (nameValue.density != "") {
@@ -141,7 +153,8 @@ const UserInput = () => {
                         <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                             <p>{product.description}</p><br />
                             <img src={product.url} /><br />
-                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{coffeePrice}.00</span>
+
+                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
                                 <select name="density" value={nameValue.density} onChange={handleNameChange} required>

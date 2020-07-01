@@ -53,7 +53,7 @@ export default function Summary() {
                     </h1>
 
                     <br />
-                    <div className="divAlert" style={{ display: alert ? "block" : "none" }}>
+                    <div className="divAlert" style={{ visibility: alert ? "visible" : "hidden" }}>
                         <span className="closebtn" onClick={() => setAlert(false)}>&times;</span>
                         <strong>Reminder:</strong> Save a screenshot for your own copy.
                     </div>

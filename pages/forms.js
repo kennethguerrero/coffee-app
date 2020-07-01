@@ -130,7 +130,7 @@ export default function Forms() {
                                 <br />
 
                                 <span style={{ display: isFifth ? "inline" : "none", fontSize: "13px" }}>
-                                    Courier: Fifth Express - &#8369;100.00 <br/><br/>
+                                    Courier: Fifth Express - &#8369;100.00
                                 </span>
                                 <span style={{ display: isGrabMove ? "inline" : "none", fontSize: "13px", color: "green" }}>
                                     For other shipping options like Lalamove or Grab, booking c/o customer.
