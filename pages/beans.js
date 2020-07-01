@@ -81,6 +81,17 @@ const PageBeans = () => {
             coffeePrice = 0;
     }
 
+    let finalPrice;
+    let finalQuantity = nameValue.quantity;
+
+    finalPrice = coffeePrice * nameValue.quantity;
+
+    if (isNaN(finalPrice)){
+        finalPrice = 0;
+    }
+
+    console.log('final price:'+finalPrice + ' ' + 'coffee price:'+coffeePrice + ' ' + 'quantity:'+ (finalQuantity));
+
     let displayPrice = false;
     if (nameValue.density != "") {
         displayPrice = true;
@@ -102,7 +113,7 @@ const PageBeans = () => {
                        <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                            <p>A bag of coffee bean with a robust flavor.</p><br />
                            <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162319/large/RE_2634.jpg?1556537228" /><br />
-                           <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{coffeePrice}.00</span>
+                           <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
                                 <select name="density" value={nameValue.density} onChange={handleNameChange} required>
