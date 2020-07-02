@@ -17,21 +17,19 @@ export default function News1() {
 
                     <p>How to take our barako drip?</p>
 
+                    <ol>
+                        <li>Tear along the arrow of the drip bag.</li>
+                        <li>Set bag on cup using the hooks.</li>
+                        <li>Pour hot water and wait until the water drips completely.</li>
+                        <li>Remove the drip bag and enjoy!</li>
+                    </ol>
+
                     <div className="grid">
                         <img src="drip2.jpg" />
                         <img src="drip1.jpg" />
                     </div>
 
                     <p>Watch the video <a href="https://www.facebook.com/btngn.ph/videos/261954168451152/" target="_blank">here.</a></p>
-
-                    <div className="grid">
-                        <ol>
-                            <li>Tear along the arrow of the drip bag.</li>
-                            <li>Set bag on cup using the hooks.</li>
-                            <li>Pour hot water and wait until the water drips completely.</li>
-                            <li>Remove the drip bag and enjoy!</li>
-                        </ol>
-                    </div>
 
                 </main>
 
