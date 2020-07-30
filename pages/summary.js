@@ -33,7 +33,7 @@ export default function Summary() {
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: nameValue.fullName, shipping: nameValue.shipping, courier: nameValue.courier, address: nameValue.address, phone: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, quantity: nameValue.quantity, type: nameValue.type,density: nameValue.density})
+            body: JSON.stringify({ name: nameValue.fullName, shipping: nameValue.shipping, courier: nameValue.courier, address: nameValue.address, phone: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, quantity: nameValue.quantity, type: nameValue.type, density: nameValue.density, totalPrice: nameValue.price})
         });
 
         console.log("Order complete!");

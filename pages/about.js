@@ -17,7 +17,7 @@ export default function About() {
 
                     <div className="grid">
                         <p>
-                            BTNGÑ is an uprising coffee brand hailing from Batangas. Aiming to promote the local products from Lipa City, Batangas, BTNGÑ makes sure that everyone will get that strong, bold, and intense profile that only barako beans can offer. Due to the continues growth of international coffee shops in the Philippines, the brand wishes to honor their heritage and bring Kapeng Barako back in the spotlight. BTNGÑ also carries other popular products from Lipa like Tablea and Black Pepper or "Paminta".
+                            BTNGÑ is an up and rising coffee brand hailing from Batangas. Aiming to promote the local products from Lipa City, Batangas, BTNGÑ makes sure that everyone will get that strong, bold, and intense profile that only barako beans can offer. Due to the continuous growth of international coffee shops in the Philippines, the brand wishes to honor its owners’ heritage and bring Kapeng Barako back in the spotlight. BTNGÑ also carries other popular products from Lipa like Tablea and Black Pepper or "Paminta".
                         </p>
                         <img src="/about1.jpg" />
                     </div>

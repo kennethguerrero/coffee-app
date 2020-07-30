@@ -4,7 +4,7 @@ const SENDGRID_API_KEY = 'API-KEY-HERE'
 
 const SENDGRID_API = 'https://api.sendgrid.com/v3/mail/send'
 
-const sendEmail = async ({ name, shipping, courier, address, phone, landmark, emailAddress, quantity, type, density }) => {
+const sendEmail = async ({ name, shipping, courier, address, phone, landmark, emailAddress, quantity, type, density, totalPrice }) => {
     const email = 'btngn.ph@gmail.com';
 
     await fetch(SENDGRID_API, {
@@ -44,6 +44,7 @@ const sendEmail = async ({ name, shipping, courier, address, phone, landmark, em
                         <strong>Order</strong><br />
                         Quantity: ${quantity}<br />
                         Type: ${type} ${density}<br />
+                        Total: ${totalPrice}<br />
                     `
                 }
             ]
