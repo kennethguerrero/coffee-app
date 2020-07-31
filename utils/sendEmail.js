@@ -44,7 +44,7 @@ const sendEmail = async ({ name, shipping, courier, address, phone, landmark, em
                         <strong>Order</strong><br />
                         Quantity: ${quantity}<br />
                         Type: ${type} ${density}<br />
-                        Total: ${totalPrice}<br />
+                        Total: &#8369;${totalPrice}<br />
                     `
                 }
             ]
