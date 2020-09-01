@@ -27,22 +27,22 @@ const PageBeans = () => {
             var coffeePrice;
             switch (nameValue.density) {
                 case "50g":
-                    coffeePrice = 45;
+                    coffeePrice = 50;
                     break;
                 case "90g":
                     coffeePrice = 80;
                     break;
                 case "100g":
-                    coffeePrice = 80;
+                    coffeePrice = 90;
                     break;
                 case "200g":
-                    coffeePrice = 150;
+                    coffeePrice = 165;
                     break;
                 case "300g":
-                    coffeePrice = 200;
+                    coffeePrice = 220;
                     break;
                 case "500g":
-                    coffeePrice = 300;
+                    coffeePrice = 330;
                     break;
                 default:
                     coffeePrice = 0;
@@ -60,22 +60,22 @@ const PageBeans = () => {
     var coffeePrice;
     switch (nameValue.density) {
         case "50g":
-            coffeePrice = 45;
+            coffeePrice = 50;
             break;
         case "90g":
             coffeePrice = 80;
             break;
         case "100g":
-            coffeePrice = 80;
+            coffeePrice = 90;
             break;
         case "200g":
-            coffeePrice = 150;
+            coffeePrice = 165;
             break;
         case "300g":
-            coffeePrice = 200;
+            coffeePrice = 220;
             break;
         case "500g":
-            coffeePrice = 300;
+            coffeePrice = 330;
             break;
         default:
             coffeePrice = 0;

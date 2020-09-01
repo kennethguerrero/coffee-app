@@ -16,6 +16,19 @@ export default function Home() {
                 </h1>
 
                 <div className="grid">
+
+                    <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
+                        <img src="/newsPreview.PNG" />
+                        <h3>We made it to PREVIEW's List! &rarr;</h3>
+                        <p>We are number seven on the list of instagram shops where you can buy premium quality drip coffee.</p>
+                    </a>
+
+                    <a href="/news1" className="card">
+                        <img src="/newsDripHow.PNG" />
+                        <h3>Barako Drip &rarr;</h3>
+                        <p>Here's how to take our Barako Drip.</p>
+                    </a>
+
                     <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
                         <img src="/newsBeauty.jpg" />
                         <h3>We Are In BeautyMNL! &rarr;</h3>
@@ -34,11 +47,6 @@ export default function Home() {
                         <p>Check out and try our Barako Drip Solo.</p>
                     </a>
 
-                    <a href="/news1" className="card">
-                        <img src="/newsDripHow.PNG" />
-                        <h3>Barako Drip &rarr;</h3>
-                        <p>Here's how to take our Barako Drip.</p>
-                    </a>
                 </div>
             </main>
 
