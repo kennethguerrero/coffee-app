@@ -17,16 +17,16 @@ export default function Home() {
 
                 <div className="grid">
 
-                    <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
+                    <a href="https://www.preview.ph/culture/where-to-buy-drip-coffee-a00318-20200813?reg=feed_1" target="_blank" className="card">
                         <img src="/newsPreview.PNG" />
                         <h3>We made it to PREVIEW's List! &rarr;</h3>
                         <p>We are number seven on the list of instagram shops where you can buy premium quality drip coffee.</p>
                     </a>
 
-                    <a href="/news1" className="card">
-                        <img src="/newsDripHow.PNG" />
-                        <h3>Barako Drip &rarr;</h3>
-                        <p>Here's how to take our Barako Drip.</p>
+                    <a href="https://www.instagram.com/p/CETm10zH5YB/" target="_blank" className="card">
+                        <img src="/newsFERN.PNG" />
+                        <h3>Calling all plants and coffee lovers! &rarr;</h3>
+                        <p>In collaboration with Fern Manila, we are giving away free Barako Drips.</p>
                     </a>
 
                     <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
@@ -39,6 +39,12 @@ export default function Home() {
                         <img src="/newsNaturale.jpg" />
                         <h3>Naturale Market &rarr;</h3>
                         <p>Yes to Local and Sustainable Living!</p>
+                    </a>
+
+                    <a href="/news1" className="card">
+                        <img src="/newsDripHow.PNG" />
+                        <h3>Barako Drip &rarr;</h3>
+                        <p>Here's how to take our Barako Drip.</p>
                     </a>
 
                     <a href="news2" className="card">
