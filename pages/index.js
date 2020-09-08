@@ -24,7 +24,7 @@ export default function Home() {
                     </a>
 
                     <a href="https://www.instagram.com/p/CETm10zH5YB/" target="_blank" className="card">
-                        <img src="/newsFERN.PNG" />
+                        <img src="/newsFERN.png" />
                         <h3>Calling all plants and coffee lovers! &rarr;</h3>
                         <p>In collaboration with Fern Manila, we are giving away free Barako Drips.</p>
                     </a>
