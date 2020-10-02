@@ -76,7 +76,7 @@ export default function FAQ() {
                                     <tbody>
                                         <tr>
                                             <td className="AHeader">A.</td>
-                                            <td>Soon! &#128521;</td>
+                                            <td>Yes. Message us for further details.</td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -45,7 +45,22 @@ export default function Forms() {
             
             const totalPrice = convertedShipFee + parsed.price;
 
-            const customer = {fullName: nameValue.fullName, shipping: nameValue.shipping, address: nameValue.address, phoneNumber: nameValue.phoneNumber, landmark: nameValue.landmark, emailAddress: nameValue.emailAddress, type: parsed.type, density: parsed.density, quantity: parsed.quantity, price: totalPrice, multipliedDensity: parsed.multipliedDensity, shippingFee: convertedShipFee, coffeePrice: parsed.coffeePrice, courier: nameValue.courier};
+            const customer = {
+                fullName: nameValue.fullName, 
+                shipping: nameValue.shipping, 
+                address: nameValue.address, 
+                phoneNumber: nameValue.phoneNumber, 
+                landmark: nameValue.landmark, 
+                emailAddress: nameValue.emailAddress, 
+                type: parsed.type, 
+                density: parsed.density, 
+                quantity: parsed.quantity, 
+                price: totalPrice, 
+                multipliedDensity: parsed.multipliedDensity, 
+                shippingFee: convertedShipFee, 
+                coffeePrice: parsed.coffeePrice, 
+                courier: nameValue.courier
+            };
 
             // console.log(totalPrice);
 
@@ -123,17 +138,17 @@ export default function Forms() {
 
                                 <select name="courier" value={nameValue.courier} onChange={handleNameChange} style={{ display: isManila ? "inline" : "none" }} required={ isManila ? true : false }>
                                     <option value=""></option>
-                                    <option value="Fifth Express">Fifth Express</option>
+                                    {/* <option value="Fifth Express">Fifth Express</option> */}
                                     <option value="Grab">Grab</option>
                                     <option value="Lalamove">Lalamove</option>
                                 </select>
                                 <br />
 
-                                <span style={{ display: isFifth ? "inline" : "none", fontSize: "13px" }}>
+                                {/* <span style={{ display: isFifth ? "inline" : "none", fontSize: "13px" }}>
                                     Courier: Fifth Express - &#8369;100.00
-                                </span>
+                                </span> */}
                                 <span style={{ display: isGrabMove ? "inline" : "none", fontSize: "13px", color: "green" }}>
-                                    For other shipping options like Lalamove or Grab, booking c/o customer.
+                                    Booking care of customer.
                                 </span>
                                 <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px" }}>
                                     Courier: LBC &#8369;250.00
