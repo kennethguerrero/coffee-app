@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://btngn.com/xmas-package-1.PNG", 
+    "id": 1, 
+    "description": "5 pieces Barako Drip Solo, 2 pieces Tablea Cups with Jute String and Christmas tag.", 
+    "name": "Barako Drip and Tablea Cups Set", 
+    "price": "160"
+  }, 
+  {
+    "url": "https://btngn.com/xmas-package-2.PNG", 
+    "id": 2, 
+    "description": "10 pieces Barako Drip Solo, Kraft Box with Jute String and Christmas tag.", 
+    "name": "Solo Drip in Box", 
+    "price": "350"
+  }, 
+  {
+    "url": "https://btngn.com/xmas-package-3.PNG", 
+    "id": 3, 
+    "description": "Barako Drip Solo with Jute String and Christmas tag.", 
+    "name": "Barako Drip Solo", 
+    "price": "30"
+  }, 
+  {
+    "url": "https://btngn.com/xmas-package-4.PNG", 
+    "id": 4, 
+    "description": "50g Barako Ground, 90g Tablea De Cacao with Ribbon and Christmans tag.", 
+    "name": "Barako Tablea Set", 
+    "price": "340"
+  },
+  {
+    "url": "https://btngn.com/xmas-package-5.PNG", 
+    "id": 5, 
+    "description": "50g Kapeng Brako Ground or Beans, Buri Box (3X2.5 in) with Ribbon and Christmas tag.", 
+    "name": "Kapeng Barako in Buri Box", 
+    "price": "90"
+  }
+]
