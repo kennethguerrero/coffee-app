@@ -16,6 +16,14 @@ export default function Home() {
                 </h1>
 
                 <div className="grid">
+                    <a href="/xmaspackage" className="card">
+                        <img src="/newsXmas.jpg" />
+                        <h3>Christmas Package &rarr;</h3>
+                        <p>Now open for pre-orders.</p>
+                    </a>
+                </div>
+
+                <div className="grid">
 
                     <a href="https://www.preview.ph/culture/where-to-buy-drip-coffee-a00318-20200813?reg=feed_1" target="_blank" className="card">
                         <img src="/newsPreview.PNG" />
