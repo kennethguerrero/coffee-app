@@ -19,11 +19,17 @@ export default function Home() {
                     <a href="/xmaspackage" className="card">
                         <img src="/newsXmas.jpg" />
                         <h3>Christmas Package &rarr;</h3>
-                        <p>Now open for pre-orders.</p>
+                        <p>Now open for pre-orders!</p>
                     </a>
                 </div>
 
                 <div className="grid">
+
+                    <a href="https://www.wheninmanila.com/stores-that-offer-good-drip-coffee/" target="_blank" className="card">
+                        <img src="/newsFERN.png" />
+                        <h3>Another feature! &rarr;</h3>
+                        <p><strong>WHEN IN MANILA</strong>'s 10 Stores That Offer Drip Coffee So Good, You’ll Automatically Feel Great in the Morning.</p>
+                    </a>
 
                     <a href="https://www.preview.ph/culture/where-to-buy-drip-coffee-a00318-20200813?reg=feed_1" target="_blank" className="card">
                         <img src="/newsPreview.PNG" />
@@ -31,11 +37,11 @@ export default function Home() {
                         <p>We are number seven on the list of instagram shops where you can buy premium quality drip coffee.</p>
                     </a>
 
-                    <a href="https://www.instagram.com/p/CETm10zH5YB/" target="_blank" className="card">
+                    {/* <a href="https://www.instagram.com/p/CETm10zH5YB/" target="_blank" className="card">
                         <img src="/newsFERN.png" />
                         <h3>Calling all plants and coffee lovers! &rarr;</h3>
                         <p>In collaboration with Fern Manila, we are giving away free Barako Drips.</p>
-                    </a>
+                    </a> */}
 
                     <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
                         <img src="/newsBeauty.jpg" />
