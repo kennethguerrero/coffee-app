@@ -33,12 +33,12 @@ const Footer = () => (
                     Quick Links
                 </div>
                 <div>
-                    <Link href="/beans">
+                    <Link href="/post/1">
                         <a>Beans</a>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/grounds">
+                    <Link href="/post/2">
                         <a>Ground</a>
                     </Link>
                 </div>
@@ -48,12 +48,12 @@ const Footer = () => (
                     </Link>
                 </div>
                 <div>
-                    <Link href="/tablea">
+                    <Link href="/post/3">
                         <a>Tablea</a>
                     </Link>
                 </div>
                 <div>
-                    <Link href="/pepper">
+                    <Link href="/post/4">
                         <a>Pepper</a>
                     </Link>
                 </div>
