@@ -106,6 +106,7 @@ const Footer = () => (
             }
             .phoneNumber{
                 font-size: 8px;
+                color: #FFF !important;
             }
             .divFooterSubHeader {
                 text-align: center;
