@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 
 const linkStyle = {
     marginLeft: 10,
@@ -7,6 +8,10 @@ const linkStyle = {
 
 const Header = () => (
     <div id="divHeader">
+        <Head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        </Head>
+
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 1 }}>
             <div className="divLogo">
                 <Link href="/">
@@ -22,6 +27,11 @@ const Header = () => (
                 </Link>
                 <Link href="/about">
                     <a style={linkStyle}>ABOUT</a>
+                </Link>
+                <Link href="/cart">
+                    <a style={{ display: "none"}}>
+                        <i className="fa fa-shopping-cart" style={{ color: "gold" }}></i>
+                    </a>
                 </Link>
             </div>
         </div>
@@ -45,9 +55,16 @@ const Header = () => (
                 color: #CFB53B;
                 transition: .10s ease;
             }
-            img {
-                width: 100%;
-                max-width: 145px;
+            @media (max-width: 520px) {
+                .divLinks {
+                    display: inline-flex;
+                }
+            }
+            @media (max-width: 600px) {
+                #imgLogo {
+                    width: 6rem;
+                    margin-top: 25px;
+                }
             }
         `}
         </style>

@@ -78,6 +78,8 @@ const Footer = () => (
                         <img src="/iconMail.png" />
                     </a>
                 </div>
+                <div className="phoneNumber">+639 454 009 380</div>
+                <div className="phoneNumber">+639 997 600 481</div>
             </div>
         </div>
         <br />
@@ -101,6 +103,9 @@ const Footer = () => (
             .divFooterContent {
                 text-align: center;
                 font-size: 11px;
+            }
+            .phoneNumber{
+                font-size: 8px;
             }
             .divFooterSubHeader {
                 text-align: center;
