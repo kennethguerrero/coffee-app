@@ -29,7 +29,7 @@ const Header = () => (
                     <a style={linkStyle}>ABOUT</a>
                 </Link>
                 <Link href="/cart">
-                    <a style={{ display: "none"}}>
+                    <a style={linkStyle}>
                         <i className="fa fa-shopping-cart" style={{ color: "gold" }}></i>
                     </a>
                 </Link>

@@ -4,11 +4,13 @@ import fetch from "isomorphic-unfetch";
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import Loader from 'react-loader-spinner';
+import Link from "next/link";
 
 const UserInput = () => {
 
     const [product, setProduct] = useState();
     const [nameValue, setNameValue] = useState("");
+    const [hasOrdered, setHasOrdered] = useState(false);
     const router = useRouter();
 
     const handleNameChange = (event) => {
@@ -19,10 +21,43 @@ const UserInput = () => {
         });
     }
 
+    useEffect(() => {
+        const getProducts = async () => {
+            const { id } = router.query;
+            // console.log("id", id);
+            const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
+            let data
+    
+            try {
+                data = await response.json()
+            } catch (err) {
+            } finally {
+                const output = data.find((item) => item.id === +id)
+                if (output) {
+                    setProduct(output)
+                }
+            }
+        }
+
+        if (router.query.id) {
+            getProducts()
+        }
+
+    }, [router])
+
+    const toggle = useCallback(
+        () => setHasOrdered(!hasOrdered),
+        [hasOrdered, setHasOrdered],
+    );
+
     const handleSubmit = useCallback (
         event => {
             event.preventDefault();
 
+            let productsSavedToCart = JSON.parse(
+                localStorage.getItem("productsOnCart") || "[]"
+            );
+            
             let myDensity = nameValue.density.replace("g", "");
             let totalDensity = myDensity * nameValue.quantity;
             
@@ -51,37 +86,24 @@ const UserInput = () => {
             }
             const totalPrice = nameValue.quantity * coffeePrice;
 
-            const customer = {type: product.name, density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
-            localStorage.setItem('order', JSON.stringify(customer));
+            let customer = { 
+                id: product.id, 
+                type: product.name, 
+                density: nameValue.density, 
+                quantity: nameValue.quantity,
+                multipliedDensity: totalDensity,
+                coffeePrice: coffeePrice,
+                price: totalPrice
+            };
 
-            router.push("/forms")
+            productsSavedToCart.push(customer);
+            localStorage.setItem("productsOnCart", JSON.stringify(productsSavedToCart));
+
+            toggle();
         },
         [nameValue]
     );
-
-    useEffect(() => {
-        const getProducts = async () => {
-            const { id } = router.query;
-            // console.log("id", id);
-            const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
-            let data
     
-            try {
-                data = await response.json()
-            } catch (err) {
-            } finally {
-                const output = data.find((item) => item.id === +id)
-                if (output) {
-                    setProduct(output)
-                }
-            }
-        }
-
-        if (router.query.id) {
-            getProducts()
-        }
-    }, [router])
-
     if (!product) {
         return (
             <div style={{ textAlign: "center", transform: "translate( 1%, 300%)" }}>
@@ -118,15 +140,10 @@ const UserInput = () => {
     }
     
     let finalPrice;
-    let finalQuantity = nameValue.quantity;
-
     finalPrice = coffeePrice * nameValue.quantity;
-
     if (isNaN(finalPrice)){
         finalPrice = 0;
     }
-    
-    console.log('final price:'+finalPrice + ' ' + 'coffee price:'+coffeePrice + ' ' + 'quantity:'+ (finalQuantity));
 
     let displayPrice = false;
     if (nameValue.density != "") {
@@ -154,21 +171,47 @@ const UserInput = () => {
                             <p>{product.description}</p><br />
                             <img src={product.url} /><br />
 
-                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
-
+                            <span className="message" style={{ display: displayPrice ? "block" : "none"}}>&#8369;{finalPrice}.00</span>
+                            
                             <form>
                                 <select name="density" value={nameValue.density} onChange={handleNameChange} required>
                                     <option value=""></option>
                                     {myOption}
                                 </select>&nbsp;
+
                                 <input type="number" id="txtQuantity" name="quantity" placeholder="quantity" value={nameValue.quantity || "" } onChange={handleNameChange} required /> &nbsp;
-                                <input className="btnSubmit" type="submit" value="CHECK OUT" />
+
+                                <button className="btnSubmit" type="submit">ADD TO CART</button>
                             </form>
+
+                            <br />
+                            <div style={{ display: hasOrdered ? "block" : "none"}}>
+                                <span className="message">Your order was placed!</span><br />
+                                <Link href="/products">
+                                    <a>Continue shopping</a>
+                                </Link> -&nbsp;
+                                <Link href="/cart">
+                                    <a>Go to cart</a>
+                                </Link>
+                            </div>
+
                         </div>
                     </div>
                 </main>
 
                 <style jsx>{`
+                    a {
+                        font-size: 13px;
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #996515;
+                    }
+                    .message {
+                        font-size: 13px;
+                    }
                     img { 
                         max-width: 500px;
                     }

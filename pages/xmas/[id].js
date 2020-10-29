@@ -4,10 +4,12 @@ import fetch from "isomorphic-unfetch";
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import Loader from 'react-loader-spinner';
+import Link from "next/link";
 
 const DynamicData = () => {
     const [product, setProduct] = useState();
     const [nameValue, setNameValue] = useState("");
+    const [hasOrdered, setHasOrdered] = useState(false);
     const router = useRouter();
 
     const handleNameChange = (event) => {
@@ -17,23 +19,6 @@ const DynamicData = () => {
             [fieldName]: event.target.value
         });
     }
-
-    const handleSubmit = useCallback (
-        event => {
-            event.preventDefault();
-
-            const customer = {
-                type: product.name,
-                coffeePrice: product.price,
-                quantity: nameValue.quantity,
-                price: totalPrice
-            }
-
-            localStorage.setItem("order", JSON.stringify(customer));
-
-            router.push("/forms");
-        }
-    )
 
     useEffect(() => {
         const getProducts = async () => {
@@ -56,6 +41,34 @@ const DynamicData = () => {
             getProducts()
         }
     }, [router])
+
+    const toggle = useCallback(
+        () => setHasOrdered(!hasOrdered),
+        [hasOrdered, setHasOrdered],
+    );
+
+    const handleSubmit = useCallback (
+        event => {
+            event.preventDefault();
+
+            let productsSavedToCart = JSON.parse(
+                localStorage.getItem("productsOnCart") || "[]"
+            );
+
+            const customer = {
+                id: "xmas" + product.id,
+                type: product.name,
+                coffeePrice: product.price,
+                quantity: nameValue.quantity,
+                price: totalPrice
+            }
+
+            productsSavedToCart.push(customer);
+            localStorage.setItem("productsOnCart", JSON.stringify(productsSavedToCart));
+
+            toggle();
+        }
+    )
 
     if (!product) {
         return (
@@ -103,8 +116,19 @@ const DynamicData = () => {
                             <form>
                                 <input type="number" id="txtQuantity" name="quantity" placeholder="quantity" value={nameValue.quantity || ""} onChange={handleNameChange} required />&nbsp;
 
-                                <input className="btnSubmit" type="submit" value="CHECK OUT" />
+                                <input className="btnSubmit" type="submit" value="ADD TO CART" />
                             </form>
+
+                            <br />
+                            <div style={{ display: hasOrdered ? "block" : "none"}}>
+                                <span className="message">Your order was placed!</span><br />
+                                <Link href="/products">
+                                    <a>Continue shopping</a>
+                                </Link> -&nbsp;
+                                <Link href="/cart">
+                                    <a>Go to cart</a>
+                                </Link>
+                            </div>
 
                         </div>
                     </div>
@@ -112,6 +136,18 @@ const DynamicData = () => {
                 </main>
 
                 <style jsx>{`
+                    a {
+                        font-size: 13px;
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #996515;
+                    }
+                    .message {
+                        font-size: 13px;
+                    }
                     img { 
                         max-width: 100%;
                     }

@@ -1,13 +1,12 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import { useEffect, useState, useCallback } from "react";
-import { useRouter } from "next/router";
+import { useState, useCallback, useEffect } from "react";
+import Link from "next/link";
 
 const PageBeans = () => {
     
     const [nameValue, setNameValue] = useState("");
-    const [product, setProduct] = useState();
-    const router = useRouter();
+    const [hasOrdered, setHasOrdered] = useState(false);
 
     const handleNameChange = (event) => {
         const fieldName = event.target.getAttribute("name");
@@ -17,9 +16,55 @@ const PageBeans = () => {
         });
     }
 
+    const toggle = useCallback(
+        () => setHasOrdered(!hasOrdered),
+        [hasOrdered, setHasOrdered],
+    );
+
+    var coffeePrice;
+    switch (nameValue.density) {
+        case "50g":
+            coffeePrice = 50;
+            break;
+        case "90g":
+            coffeePrice = 80;
+            break;
+        case "100g":
+            coffeePrice = 90;
+            break;
+        case "200g":
+            coffeePrice = 165;
+            break;
+        case "300g":
+            coffeePrice = 220;
+            break;
+        case "500g":
+            coffeePrice = 330;
+            break;
+        default:
+            coffeePrice = 0;
+    }
+
+    let finalPrice;
+    finalPrice = coffeePrice * nameValue.quantity;
+
+    if (isNaN(finalPrice)){
+        finalPrice = 0;
+    }
+    
+    let displayPrice = false;
+    if (nameValue.density != "") {
+        displayPrice = true;
+        // console.log(coffeePrice);
+    }
+
     const handleSubmit = useCallback (
         event => {
             event.preventDefault();
+
+            let productsSavedToCart = JSON.parse(
+                localStorage.getItem("productsOnCart") || "[]"
+            );
 
             let myDensity = nameValue.density.replace("g", "");
             let totalDensity = myDensity * nameValue.quantity;
@@ -49,54 +94,22 @@ const PageBeans = () => {
             }
             const totalPrice = nameValue.quantity * coffeePrice;
 
-            const customer = {type: "Barako Beans", density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
-            localStorage.setItem('order', JSON.stringify(customer));
+            let customer = {
+                id: 1,
+                type: "Barako Beans", 
+                density: nameValue.density, 
+                quantity: nameValue.quantity,  
+                multipliedDensity: totalDensity, 
+                coffeePrice: coffeePrice,
+                price: totalPrice
+            }
+            productsSavedToCart.push(customer);
+            localStorage.setItem("productsOnCart", JSON.stringify(productsSavedToCart));
 
-            router.push("/forms")
+            toggle();
         },
         [nameValue]
     );
-
-    var coffeePrice;
-    switch (nameValue.density) {
-        case "50g":
-            coffeePrice = 50;
-            break;
-        case "90g":
-            coffeePrice = 80;
-            break;
-        case "100g":
-            coffeePrice = 90;
-            break;
-        case "200g":
-            coffeePrice = 165;
-            break;
-        case "300g":
-            coffeePrice = 220;
-            break;
-        case "500g":
-            coffeePrice = 330;
-            break;
-        default:
-            coffeePrice = 0;
-    }
-
-    let finalPrice;
-    let finalQuantity = nameValue.quantity;
-
-    finalPrice = coffeePrice * nameValue.quantity;
-
-    if (isNaN(finalPrice)){
-        finalPrice = 0;
-    }
-
-    console.log('final price:'+finalPrice + ' ' + 'coffee price:'+coffeePrice + ' ' + 'quantity:'+ (finalQuantity));
-
-    let displayPrice = false;
-    if (nameValue.density != "") {
-        displayPrice = true;
-        // console.log(coffeePrice);
-    }
 
     return (
         <Layout>
@@ -123,8 +136,19 @@ const PageBeans = () => {
                                     <option value="300g">300g</option>
                                 </select>&nbsp;
                                 <input type="number" id="txtQuantity" value={nameValue.quantity || "" } onChange={handleNameChange} placeholder="quantity" name="quantity" required />&nbsp;
-                                <input type="submit" className="btnSubmit" value=" CHECK OUT" />
+                                <input type="submit" className="btnSubmit" value="ADD TO CART" />
                             </form>
+
+                            <br />
+                            <div style={{ display: hasOrdered ? "block" : "none"}}>
+                                <span className="message">Your order was placed!</span><br />
+                                <Link href="/products">
+                                    <a>Continue shopping</a>
+                                </Link> -&nbsp;
+                                <Link href="/cart">
+                                    <a>Go to cart</a>
+                                </Link>
+                            </div>
 
                         </div> 
                     </div>
@@ -132,6 +156,18 @@ const PageBeans = () => {
                 </main>
 
                 <style jsx>{`
+                    a {
+                        font-size: 13px;
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #996515;
+                    }
+                    .message {
+                        font-size: 13px;
+                    }
                     img { 
                         max-width: 500px;
                     }

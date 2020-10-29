@@ -20,8 +20,8 @@ export default function Forms() {
         event => {
             event.preventDefault();
 
-            const existing = localStorage.getItem('order');
-            const parsed = JSON.parse(existing);
+            const productsFromCart = localStorage.getItem('productsFromCart');
+            const parsed = JSON.parse(productsFromCart);
 
             var convertedShipFee;
             if (nameValue.shipping == "Within Metro Manila") {
@@ -43,33 +43,29 @@ export default function Forms() {
                 convertedShipFee = 250;
             }
             
-            const totalPrice = convertedShipFee + parsed.price;
+            const totalPrice = convertedShipFee + parsed.totalPriceOnCart;
 
-            const customer = {
+            const customerDetails = {
                 fullName: nameValue.fullName, 
                 shipping: nameValue.shipping, 
                 address: nameValue.address, 
                 phoneNumber: nameValue.phoneNumber, 
                 landmark: nameValue.landmark, 
                 emailAddress: nameValue.emailAddress, 
-                type: parsed.type, 
-                density: parsed.density, 
-                quantity: parsed.quantity, 
+                // type: parsed.type, 
+                // density: parsed.density, 
+                // quantity: parsed.quantity, 
                 price: totalPrice, 
-                multipliedDensity: parsed.multipliedDensity, 
+                // multipliedDensity: parsed.multipliedDensity, 
                 shippingFee: convertedShipFee, 
-                coffeePrice: parsed.coffeePrice, 
+                coffeePrice: parsed.totalPriceOnCart, 
                 courier: nameValue.courier
             };
 
-            // console.log(totalPrice);
-
-            localStorage.setItem('order', JSON.stringify(customer));
-        
+            localStorage.setItem('order', JSON.stringify(customerDetails));
             router.push("/summary")
         },
         [nameValue]
-        // setNameValue("");
     ); 
 
     let isManila;
@@ -101,6 +97,7 @@ export default function Forms() {
     let outsideManila;
     if (nameValue.shipping == "Outside Metro Manila") {
         outsideManila = true;
+        nameValue.courier = "LBC";
     }
     else {
         outsideManila = false;
@@ -150,8 +147,8 @@ export default function Forms() {
                                 <span style={{ display: isGrabMove ? "inline" : "none", fontSize: "13px", color: "green" }}>
                                     Booking care of customer.
                                 </span>
-                                <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px" }}>
-                                    Courier: LBC &#8369;250.00
+                                <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
+                                    Courier: <strong>LBC</strong> - &#8369;250.00
                                 </span>
                             </div>
                             

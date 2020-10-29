@@ -6,6 +6,8 @@ import Link from "next/link";
 export default function Summary() {
 
     const [nameValue, setNameValue] = useState("");
+    const [cartItems, setCartItems] = useState([]);
+    const [customerInfo, setCustomerInfo] = useState([]);
     const [alert, setAlert] = useState(true);
 
     let warning;
@@ -27,26 +29,50 @@ export default function Summary() {
     useEffect(() => {
         const result = localStorage.getItem('order');
         setNameValue(JSON.parse(result));
+
+        const rehydrate = async () => {
+            let cartItems;
+            let customerInfo;
+            try {
+                cartItems = localStorage.getItem("productsOnCart");
+                cartItems = await JSON.parse(cartItems);
+                setCartItems(cartItems);
+
+                customerInfo = localStorage.getItem("order");
+                customerInfo = await JSON.parse(customerInfo);
+                setCustomerInfo(customerInfo);
+            }
+            catch (e) {
+                console.error("ERROR", e);
+            }
+        };
+
+        rehydrate();
     }, []);
 
     const handleSubmit = () => {
-        fetch('/api/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                name: nameValue.fullName, 
-                shipping: nameValue.shipping, 
-                courier: nameValue.courier, 
-                address: nameValue.address, 
-                phone: nameValue.phoneNumber, 
-                landmark: nameValue.landmark, 
-                emailAddress: nameValue.emailAddress, 
-                quantity: nameValue.quantity, 
-                type: nameValue.type, 
-                density: nameValue.density, 
-                totalPrice: nameValue.price
-            })
-        });
+        try {
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    name: nameValue.fullName, 
+                    shipping: nameValue.shipping, 
+                    courier: nameValue.courier, 
+                    address: nameValue.address, 
+                    phone: nameValue.phoneNumber, 
+                    landmark: nameValue.landmark, 
+                    emailAddress: nameValue.emailAddress, 
+                    totalPrice: nameValue.price,
+    
+                    order: cartItems,
+                    customer: customerInfo
+                })
+            });
+        }
+        catch (e) {
+            console.error("ERROR", e);
+        }
 
         console.log("Order complete!");
     }
@@ -75,13 +101,17 @@ export default function Summary() {
                     <table>
                         <tbody>
                             <tr>
-                                <td style={{ width: "75%" }}>Coffee</td>
+                                <td style={{ width: "75%" }}>
+                                    <Link href="/cart">
+                                        <a>Ordered Coffee</a>
+                                    </Link>
+                                </td>
                                 <td style={{ width: "25%" }}>&#8369; {nameValue.coffeePrice}.00</td>
                             </tr>
-                            <tr>
+                            {/* <tr>
                                 <td>Quantity</td>
                                 <td>{nameValue.quantity}</td>
-                            </tr>
+                            </tr> */}
                             <tr>
                                 <td style={{ paddingRight: "40px" }}>Shipping fee</td>
                                 <td>
@@ -106,10 +136,10 @@ export default function Summary() {
                         </tbody>
                     </table>
 
-                    <div className="divContent">
+                    {/* <div className="divContent">
                         <div className="labelTitle">Order:</div> 
                         <div>{nameValue.quantity} {nameValue.type} {nameValue.density}</div>
-                    </div>
+                    </div> */}
 
                     <div className="divContent">
                         <div className="labelTitle">Full Name:</div> 
@@ -241,6 +271,13 @@ export default function Summary() {
                     .divContent, table {
                         margin-bottom: 20px;
                         width: 95%;
+                    }
+                    a { 
+                        color: #000; 
+                    }
+                    a:hover {
+                        color: #000;
+                        font-weight: bold;
                     }
                 `}</style>
 

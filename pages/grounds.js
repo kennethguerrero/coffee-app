@@ -1,13 +1,12 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import { useEffect, useState, useCallback } from "react";
-import { useRouter } from "next/router";
+import { useState, useCallback } from "react";
+import Link from "next/link";
 
 const PageGround = () => {
 
     const [nameValue, setNameValue] = useState("");
-    const [product, setProduct] = useState();
-    const router = useRouter();
+    const [hasOrdered, setHasOrdered] = useState(false);
 
     const handleNameChange = (event) => {
         const fieldName = event.target.getAttribute("name");
@@ -16,10 +15,19 @@ const PageGround = () => {
             [fieldName]: event.target.value
         });
     }
+    
+    const toggle = useCallback(
+        () => setHasOrdered(!hasOrdered),
+        [hasOrdered, setHasOrdered],
+    );
 
     const handleSubmit = useCallback (
         event => {
             event.preventDefault();
+
+            let productsSavedToCart = JSON.parse(
+                localStorage.getItem("productsOnCart") || "[]"
+            );
 
             let myDensity = nameValue.density.replace("g", "");
             let totalDensity = myDensity * nameValue.quantity;
@@ -49,10 +57,19 @@ const PageGround = () => {
             }
             const totalPrice = nameValue.quantity * coffeePrice;
 
-            const customer = {type: "Barako Ground", density: nameValue.density, quantity: nameValue.quantity, price: totalPrice, multipliedDensity: totalDensity, coffeePrice: coffeePrice}
-            localStorage.setItem('order', JSON.stringify(customer));
+            const customer = {
+                id: 2,
+                type: "Barako Ground", 
+                density: nameValue.density, 
+                quantity: nameValue.quantity,  
+                multipliedDensity: totalDensity, 
+                coffeePrice: coffeePrice,
+                price: totalPrice
+            }
+            productsSavedToCart.push(customer);
+            localStorage.setItem("productsOnCart", JSON.stringify(productsSavedToCart));
 
-            router.push("/forms")
+            toggle();
         },
         [nameValue]
     );
@@ -82,15 +99,11 @@ const PageGround = () => {
     }
 
     let finalPrice;
-    let finalQuantity = nameValue.quantity;
-
     finalPrice = coffeePrice * nameValue.quantity;
 
     if (isNaN(finalPrice)){
         finalPrice = 0;
     }
-
-    console.log('final price:'+finalPrice + ' ' + 'coffee price:'+coffeePrice + ' ' + 'quantity:'+ (finalQuantity));
 
     let displayPrice = false;
     if (nameValue.density != "") {
@@ -125,8 +138,19 @@ const PageGround = () => {
                                     <option value="500g">500g</option>
                                 </select>&nbsp;
                                 <input type="number" id="txtQuantity" value={nameValue.quantity || "" } onChange={handleNameChange} placeholder="quantity" name="quantity" required />&nbsp;
-                                <input type="submit" className="btnSubmit" value=" CHECK OUT" />
+                                <input type="submit" className="btnSubmit" value="ADD TO CART" />
                             </form>
+
+                            <br />
+                            <div style={{ display: hasOrdered ? "block" : "none"}}>
+                                <span className="message">Your order was placed!</span><br />
+                                <Link href="/products">
+                                    <a>Continue shopping</a>
+                                </Link> -&nbsp;
+                                <Link href="/cart">
+                                    <a>Go to cart</a>
+                                </Link>
+                            </div>
 
                         </div> 
                     </div>
@@ -134,6 +158,18 @@ const PageGround = () => {
                 </main>
 
                 <style jsx>{`
+                    a {
+                        font-size: 13px;
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #996515;
+                    }
+                    .message {
+                        font-size: 13px;
+                    }
                     img { 
                         max-width: 500px;
                     }
