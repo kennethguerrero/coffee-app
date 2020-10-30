@@ -122,7 +122,7 @@ const DynamicData = () => {
                             <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>
                                 <span className="message">Your order was placed!</span><br />
-                                <Link href="/products">
+                                <Link href="/xmaspackage">
                                     <a>Continue shopping</a>
                                 </Link> -&nbsp;
                                 <Link href="/cart">
