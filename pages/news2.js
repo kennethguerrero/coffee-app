@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function News2() {
     return (
@@ -26,9 +27,23 @@ export default function News2() {
                         <img src="dripsolo6.jpg" />
                     </div>
 
+                    <br />
+                    <Link href="/solo">
+                        <a>Order here.</a>
+                    </Link>
+
                 </main>
 
                 <style jsx> {`
+                    a {
+                        font-size: 13px;
+                        color: #000;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #996515;
+                    }
                     img {
                         width: 100%; 
                         max-width: 360px;

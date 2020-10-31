@@ -53,6 +53,11 @@ const Footer = () => (
                     </Link>
                 </div>
                 <div>
+                    <Link href="/solo">
+                        <a>Solo</a>
+                    </Link>
+                </div>
+                <div>
                     <Link href="/pepper">
                         <a>Pepper</a>
                     </Link>
