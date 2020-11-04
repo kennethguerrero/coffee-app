@@ -173,7 +173,7 @@ const PageSolo = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 100%;
                     }
                     .container {
                         min-height: 100vh;
