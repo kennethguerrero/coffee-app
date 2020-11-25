@@ -94,6 +94,14 @@ const DynamicData = () => {
         displayPrice = true;
     }
 
+    let isSoldOut;
+    if (product.id == "4") {
+        isSoldOut = true;
+    }
+    else {
+        isSoldOut = false;
+    }
+
     return (
         <Layout>
             <div className="container">
@@ -116,8 +124,15 @@ const DynamicData = () => {
                             <form>
                                 <input type="number" id="txtQuantity" name="quantity" placeholder="quantity" value={nameValue.quantity || ""} onChange={handleNameChange} required />&nbsp;
 
-                                <input className="btnSubmit" type="submit" value="ADD TO CART" />
+                                <input className="btnSubmit" type="submit" value="ADD TO CART" disabled={ isSoldOut ? true : false } />
                             </form>
+
+                            <br />
+                            <div style={{ display: isSoldOut ? "block": "none" }}>
+                                <span className="message">
+                                    <strong>Sold Out</strong>
+                                </span><br />
+                            </div>
 
                             <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>
