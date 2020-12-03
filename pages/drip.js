@@ -117,6 +117,8 @@ const PageDrip = () => {
         //console.log(coffeePrice);
     }
 
+    let isSoldOut = true;
+
     return (
         <Layout>
             <div className="container">
@@ -140,8 +142,15 @@ const PageDrip = () => {
                                     <option value="10bags">10 bags</option>
                                 </select>&nbsp;
                                 <input type="number" id="txtQuantity" value={nameValue.quantity || "" } onChange={handleNameChange} placeholder="quantity" name="quantity" required />&nbsp;
-                                <input type="submit" className="btnSubmit" value="ADD TO CART" />
+                                <input type="submit" className="btnSubmit" value="ADD TO CART" disabled={ isSoldOut ? true : false } />
                             </form>
+
+                            <br />
+                            <div style={{ display: isSoldOut ? "block": "none" }}>
+                                <span className="message">
+                                    <strong>Sold Out</strong>
+                                </span><br />
+                            </div>
 
                             <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>

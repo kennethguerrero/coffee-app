@@ -94,12 +94,10 @@ const DynamicData = () => {
         displayPrice = true;
     }
 
-    let isSoldOut;
-    if (product.id == "4") {
+    let isSoldOut = false;
+    let i = product.id;
+    for (i = 0; i <= 4; i++) {
         isSoldOut = true;
-    }
-    else {
-        isSoldOut = false;
     }
 
     return (

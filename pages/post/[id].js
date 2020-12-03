@@ -155,6 +155,12 @@ const UserInput = () => {
         return <option key={opt} value={opt}>{opt}</option>
     })
 
+    let isSoldOut = false;
+    let i = product.id;
+    for (i = 0; i <= 4; i++) {
+        isSoldOut = true;
+    }
+
     return (
         <Layout>
             <div className="container">
@@ -181,8 +187,15 @@ const UserInput = () => {
 
                                 <input type="number" id="txtQuantity" name="quantity" placeholder="quantity" value={nameValue.quantity || "" } onChange={handleNameChange} required /> &nbsp;
 
-                                <button className="btnSubmit" type="submit">ADD TO CART</button>
+                                <input className="btnSubmit" type="submit" value="ADD TO CART" disabled={ isSoldOut ? true : false } />
                             </form>
+
+                            <br />
+                            <div style={{ display: isSoldOut ? "block": "none" }}>
+                                <span className="message">
+                                    <strong>Sold Out</strong>
+                                </span><br />
+                            </div>
 
                             <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>
