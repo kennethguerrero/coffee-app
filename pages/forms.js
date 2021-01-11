@@ -148,7 +148,7 @@ export default function Forms() {
                                     Booking care of customer.
                                 </span>
                                 <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
-                                    Courier: <strong>LBC</strong> - &#8369;250.00
+                                    Courier: <strong>LBC</strong> - &#8369;300.00
                                 </span>
                             </div>
                             
