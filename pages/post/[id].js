@@ -26,7 +26,7 @@ const UserInput = () => {
             const { id } = router.query;
             // console.log("id", id);
             // const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
-            const response = await fetch("http://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
+            const response = await fetch("https://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
             let data
     
             try {
