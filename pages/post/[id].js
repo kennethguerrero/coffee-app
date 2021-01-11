@@ -25,7 +25,8 @@ const UserInput = () => {
         const getProducts = async () => {
             const { id } = router.query;
             // console.log("id", id);
-            const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
+            // const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
+            const response = await fetch("http://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
             let data
     
             try {
@@ -63,6 +64,9 @@ const UserInput = () => {
             
             var coffeePrice;
             switch (nameValue.density) {
+                case "10g":
+                    coffeePrice = 50;
+                    break;
                 case "50g":
                     coffeePrice = 50;
                     break;
@@ -80,6 +84,9 @@ const UserInput = () => {
                     break;
                 case "500g":
                     coffeePrice = 330;
+                    break;
+                case "10bags":
+                    coffeePrice = 220;
                     break;
                 default:
                     coffeePrice = 0;
@@ -117,6 +124,9 @@ const UserInput = () => {
     
     var coffeePrice;
     switch (nameValue.density) {
+        case "10g":
+            coffeePrice = 50;
+            break;
         case "50g":
             coffeePrice = 50;
             break;
@@ -134,6 +144,9 @@ const UserInput = () => {
             break;
         case "500g":
             coffeePrice = 330;
+            break;
+        case "10bags":
+            coffeePrice = 220;
             break;
         default:
             coffeePrice = 0;
@@ -157,7 +170,7 @@ const UserInput = () => {
 
     let isSoldOut = false;
     let i = product.id;
-    for (i = 0; i <= 4; i++) {
+    for (i = 0; i <= 6; i++) {
         isSoldOut = false;
     }
 
@@ -226,7 +239,7 @@ const UserInput = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
                     }
                     .container {
                         min-height: 100vh;

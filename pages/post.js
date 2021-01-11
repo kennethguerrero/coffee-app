@@ -8,8 +8,7 @@ const Post = ({ url, id }) => {
                 <img src={url} />
             </Link>
             <style jsx> {`
-                img {
-                    width: 60%; 
+                img { 
                     max-width: 360px;
                     opacity: 1;
                     backface-visibility: hidden;
