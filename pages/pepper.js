@@ -183,7 +183,6 @@ const PagePepper = () => {
                     }
                     img { 
                         max-width: 80%;
-                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;
