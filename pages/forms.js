@@ -40,7 +40,7 @@ export default function Forms() {
                 }
             }
             else {
-                convertedShipFee = 250;
+                convertedShipFee = 300;
             }
             
             const totalPrice = convertedShipFee + parsed.totalPriceOnCart;
