@@ -117,7 +117,7 @@ const PagePepper = () => {
         //console.log(coffeePrice);
     }
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -133,7 +133,7 @@ const PagePepper = () => {
                     <div className="grid">
                         <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                            <p>A bag of freshly ground black pepper.</p><br />
-                           <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/206179/large/RE_1968.jpg?1564118357" /><br />
+                           <img src="/Products-Pepper.JPG" /><br />
                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -182,7 +182,8 @@ const PagePepper = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
+                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;

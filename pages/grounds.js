@@ -111,7 +111,7 @@ const PageGround = () => {
         // console.log(coffeePrice);
     }
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -127,7 +127,7 @@ const PageGround = () => {
                     <div className="grid">
                        <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                            <p>A bag of fine ground coffee with a robust flavor.</p><br />
-                           <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162315/large/RE_2653.jpg?1556536940" /><br />
+                           <img src="/Products-Ground.JPG" /><br />
                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -180,7 +180,8 @@ const PageGround = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
+                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;

@@ -15,13 +15,13 @@ export default function Home() {
                     Love at first <span id="textSIP">sip</span>
                 </h1>
 
-                <div className="grid">
+                {/* <div className="grid">
                     <a href="/xmaspackage" className="card">
                         <img src="/newsXmas.jpg" />
                         <h3>Christmas Package &rarr;</h3>
                         <p>Now open for pre-orders!</p>
                     </a>
-                </div>
+                </div> */}
 
                 <div className="grid">
 

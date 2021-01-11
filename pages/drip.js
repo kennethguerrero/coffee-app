@@ -117,7 +117,7 @@ const PageDrip = () => {
         //console.log(coffeePrice);
     }
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -133,7 +133,7 @@ const PageDrip = () => {
                     <div className="grid">
                         <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                             <p>10 drip bags of instant kapeng barako.</p><br />
-                            <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162315/large/RE_2653.jpg?1556536940" /><br />
+                            <img src="/Products-Drip.JPG" /><br />
                             <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -182,7 +182,8 @@ const PageDrip = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
+                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;

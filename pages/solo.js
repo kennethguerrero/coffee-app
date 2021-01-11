@@ -117,7 +117,7 @@ const PageSolo = () => {
         [nameValue]
     );
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -133,7 +133,7 @@ const PageSolo = () => {
                     <div className="grid">
                         <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                             <p>Barako Drip in a solo bag.</p><br />
-                            <img src="/newsDripSolo.PNG" /><br />
+                            <img src="/Products-Solo.JPG" /><br />
                             <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -182,7 +182,7 @@ const PageSolo = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 100%;
+                        max-width: 80%;
                     }
                     .container {
                         min-height: 100vh;

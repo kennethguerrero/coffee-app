@@ -111,7 +111,7 @@ const PageBeans = () => {
         [nameValue]
     );
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -127,7 +127,7 @@ const PageBeans = () => {
                     <div className="grid">
                        <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                            <p>A bag of coffee bean with a robust flavor.</p><br />
-                           <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162319/large/RE_2634.jpg?1556537228" /><br />
+                           <img src="/Products-Beans.JPG" /><br />
                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -178,7 +178,8 @@ const PageBeans = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
+                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;

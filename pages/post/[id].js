@@ -158,7 +158,7 @@ const UserInput = () => {
     let isSoldOut = false;
     let i = product.id;
     for (i = 0; i <= 4; i++) {
-        isSoldOut = true;
+        isSoldOut = false;
     }
 
     return (

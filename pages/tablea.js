@@ -111,7 +111,7 @@ const PageTablea = () => {
         //console.log(coffeePrice);
     }
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -127,7 +127,7 @@ const PageTablea = () => {
                     <div className="grid">
                         <div onSubmit={handleSubmit} style={{ textAlign: "center" }}>
                            <p>A bag of pure unsweetened tablea.</p><br />
-                           <img src="https://do6gbw1x8hs3.cloudfront.net/spree/product_images/162219/large/RE_2632.jpg?1556528812" /><br />
+                           <img src="/Products-Tablea.JPG" /><br />
                            <span style={{ display: displayPrice ? "block" : "none", fontSize: "13px"}}>&#8369;{finalPrice}.00</span>
 
                             <form>
@@ -176,7 +176,8 @@ const PageTablea = () => {
                         font-size: 13px;
                     }
                     img { 
-                        max-width: 500px;
+                        max-width: 80%;
+                        transform: rotate(90deg);
                     }
                     .container {
                         min-height: 100vh;
