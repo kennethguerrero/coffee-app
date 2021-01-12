@@ -15,15 +15,23 @@ export default function Home() {
                     Love at first <span id="textSIP">sip</span>
                 </h1>
 
-                {/* <div className="grid">
-                    <a href="/xmaspackage" className="card">
-                        <img src="/newsXmas.jpg" />
-                        <h3>Christmas Package &rarr;</h3>
-                        <p>Now open for pre-orders!</p>
-                    </a>
-                </div> */}
-
                 <div className="grid">
+
+                    {/* <div className="grid">
+                        <a href="/xmaspackage" className="card">
+                            <img src="/newsXmas.jpg" />
+                            <h3>Christmas Package &rarr;</h3>
+                            <p>Now open for pre-orders!</p>
+                        </a>
+                    </div> */}
+
+                    <div className="grid">
+                        <a href="/setspackage" className="card">
+                            <img src="https://btngn.com/Products-Sets-2.png" />
+                            <h3>NEW PRODUCT SETS &rarr;</h3>
+                            <p>Check out our new collection that is perfect for your event.</p>
+                        </a>
+                    </div>
 
                     <a href="https://www.wheninmanila.com/stores-that-offer-good-drip-coffee/" target="_blank" className="card">
                         <img src="/newsFERN.png" />
