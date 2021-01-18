@@ -33,7 +33,9 @@ export default function Cart() {
         }, 0);
     }
 
-    const containsColdBrew = cartItems.find(id => id = "Cold Brew")
+    const containsColdBrew = cartItems.find( ({ type }) => type === "Cold Brew" );
+    console.log(containsColdBrew);
+
     let cartWithColdBrew;
     if (containsColdBrew != undefined){
         // console.log("Cart with Cold Brew");
