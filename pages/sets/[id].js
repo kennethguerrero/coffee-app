@@ -23,7 +23,7 @@ const DynamicData = () => {
     useEffect(() => {
         const getProducts = async () => {
             const { id } = router.query;
-            const response = await fetch("https://www.json-generator.com/api/json/get/cjQIvhvurm?indent=2");
+            const response = await fetch("https://www.json-generator.com/api/json/get/cfWeaRYcUi?indent=2");
             let data
     
             try {
@@ -135,7 +135,7 @@ const DynamicData = () => {
                             <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>
                                 <span className="message">Your order was placed!</span><br />
-                                <Link href="/xmaspackage">
+                                <Link href="/setspackage">
                                     <a>Continue shopping</a>
                                 </Link> -&nbsp;
                                 <Link href="/cart">

@@ -177,9 +177,15 @@ const UserInput = () => {
 
     let isSoldOut = false;
     let i = product.id;
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i <= 7; i++) {
         isSoldOut = false;
     }
+
+    let isColdBrew;
+    if (product.id == 7) {
+        isColdBrew = true;
+    }
+    else { isColdBrew == false; }
 
     return (
         <Layout>
@@ -218,6 +224,13 @@ const UserInput = () => {
                             </div>
 
                             <br />
+                            <div style={{ display: isColdBrew ? "block": "none" }}>
+                                <span className="message greenText">
+                                    <strong>Shipping around Metro Manila only.</strong>
+                                </span>
+                            </div>
+
+                            <br />
                             <div style={{ display: hasOrdered ? "block" : "none"}}>
                                 <span className="message">Your order was placed!</span><br />
                                 <Link href="/products">
@@ -244,6 +257,9 @@ const UserInput = () => {
                     }
                     .message {
                         font-size: 13px;
+                    }
+                    .greenText {
+                        color: green;
                     }
                     img { 
                         max-width: 80%;

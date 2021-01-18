@@ -33,8 +33,20 @@ export default function Cart() {
         }, 0);
     }
 
+    const containsColdBrew = cartItems.find(id => id = "Cold Brew")
+    let cartWithColdBrew;
+    if (containsColdBrew != undefined){
+        // console.log("Cart with Cold Brew");
+        cartWithColdBrew = true;
+    }
+    else {
+        // console.log("Cart without Cold Brew");
+        cartWithColdBrew = false;
+    }
+
     const AddToCart = () => {
-        const SubTotalPrice = { totalPriceOnCart: totalPriceOnCart }
+        const SubTotalPrice = { totalPriceOnCart: totalPriceOnCart, cartWithColdBrew: cartWithColdBrew }
+
         localStorage.setItem("productsFromCart", JSON.stringify(SubTotalPrice));
         router.push("/forms");
     }

@@ -62,8 +62,14 @@ export default function Forms() {
                 courier: nameValue.courier
             };
 
-            localStorage.setItem('order', JSON.stringify(customerDetails));
-            router.push("/summary")
+            if ((parsed.cartWithColdBrew == true) && (nameValue.shipping == "Outside Metro Manila")){
+                //console.log("id-7");
+            }
+            else {
+
+                localStorage.setItem('order', JSON.stringify(customerDetails));
+                router.push("/summary")
+            }
         },
         [nameValue]
     ); 
@@ -101,7 +107,15 @@ export default function Forms() {
     }
     else {
         outsideManila = false;
-    }    
+    }
+
+    const productsFromCart = localStorage.getItem('productsFromCart');
+    const parsed = JSON.parse(productsFromCart);
+
+    let isColdBrewProvince;
+    if (nameValue.shipping == "Outside Metro Manila" && parsed.cartWithColdBrew == true) {
+        isColdBrewProvince = true;
+    }
 
     return (
         <Layout>
@@ -174,11 +188,21 @@ export default function Forms() {
                             </div>
                             <br/>
                             <input className="btnSubmit" type="submit" value="SUBMIT" />
+
+                            <div style={{ display: isColdBrewProvince ? "block": "none" }}>
+                                <span className="message">Cold Brew cannot be shipped outside Metro Manila.</span>
+                            </div>
+
                         </form>
                     </div>
                 </main>
 
                 <style jsx> {`
+                    .message {
+                        color: red;
+                        font-size: 13px;
+                        text-align: default
+                    }
                     form {
                         margin-top: 40px;
                         width: 350px;
