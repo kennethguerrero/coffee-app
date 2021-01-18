@@ -164,6 +164,11 @@ export default function Forms() {
                                 <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
                                     Courier: <strong>LBC</strong> - &#8369;300.00
                                 </span>
+
+                                <span className="message" style={{ display: isColdBrewProvince ? "block": "none" }}>
+                                    <br />Cold Brew cannot be shipped outside Metro Manila.
+                                </span>
+
                             </div>
                             
                             <div className="divContent">
@@ -188,10 +193,6 @@ export default function Forms() {
                             </div>
                             <br/>
                             <input className="btnSubmit" type="submit" value="SUBMIT" />
-
-                            <div style={{ display: isColdBrewProvince ? "block": "none" }}>
-                                <span className="message">Cold Brew cannot be shipped outside Metro Manila.</span>
-                            </div>
 
                         </form>
                     </div>
