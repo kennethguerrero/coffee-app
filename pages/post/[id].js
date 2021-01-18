@@ -26,7 +26,8 @@ const UserInput = () => {
             const { id } = router.query;
             // console.log("id", id);
             // const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
-            const response = await fetch("https://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
+            // const response = await fetch("https://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
+            const response = await fetch("https://www.json-generator.com/api/json/get/cggzsnGgrS?indent=2");
             let data
     
             try {
@@ -59,7 +60,7 @@ const UserInput = () => {
                 localStorage.getItem("productsOnCart") || "[]"
             );
             
-            let myDensity = nameValue.density.replace("g", "");
+            let myDensity = nameValue.density.replace("g", "").replace("ml", "");
             let totalDensity = myDensity * nameValue.quantity;
             
             var coffeePrice;
@@ -87,6 +88,9 @@ const UserInput = () => {
                     break;
                 case "10bags":
                     coffeePrice = 220;
+                    break;
+                case "350ml":
+                    coffeePrice = 100;
                     break;
                 default:
                     coffeePrice = 0;
@@ -147,6 +151,9 @@ const UserInput = () => {
             break;
         case "10bags":
             coffeePrice = 220;
+            break;
+        case "350ml":
+            coffeePrice = 100;
             break;
         default:
             coffeePrice = 0;
