@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://btngn.com/Products-Sets-1.png", 
+    "price": 350, 
+    "id": 1, 
+    "name": "Barako Set 1", 
+    "description": "5 pieces Barako Drip Bag, 1 piece 50g Black Pepper, 1 piece 90g Tablea De Cacao, 1 piece 50g Kapeng Barako Ground."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-2.png", 
+    "price": 320, 
+    "id": 2, 
+    "name": "Barako Set 8", 
+    "description": "1 piece 90g Tablea De Cacao, 1 piece 50g Kapeng Barako Ground, 5 pieces Barako Drip Solo"
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-3.png", 
+    "price": 330, 
+    "id": 3, 
+    "name": "Barako Set 2", 
+    "description": "10 pieces Barako Drip Bag and 1 piece 90g Tablea De Cacao."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-4.png", 
+    "price": 370, 
+    "id": 4, 
+    "name": "Barako Set 3", 
+    "description": "5 pieces Barako Drip Solo and 2 pieces 90g Tablea De Cacao."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-5.png", 
+    "price": 350, 
+    "id": 5, 
+    "name": "Barako Set 4", 
+    "description": "10 pieces Barako Drip Solo."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-6.png", 
+    "price": 300, 
+    "id": 6, 
+    "name": "Barako Set 5", 
+    "description": "5 pieces Barako Drip Solo and 1 piece 90g Tablea De Cacao."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-7.png", 
+    "price": 160, 
+    "id": 7, 
+    "name": "Kapeng Barako in Buri Box", 
+    "description": "1 piece 50g Kapeng Barako Ground and 1 piece 90g Tablea De Cacao."
+  }, 
+  {
+    "url": "https://btngn.com/Products-Sets-8.png", 
+    "price": 190, 
+    "id": 8, 
+    "name": "Barako Set 7", 
+    "description": "5 pieces Barako Drip Solo"
+  }
+]
