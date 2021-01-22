@@ -15,9 +15,11 @@ export default function About() {
                         Congratulations!
                     </h1>
 
-                    <h2 style={{ textAlign: "center" }}>Your order has been placed and we will contact you shortly.</h2>    
+                    <h2 style={{ textAlign: "center" }}>Your order has been placed.</h2>  
 
-                    <table>
+                    <h2 style={{ textAlign: "center" }}>Please check your email for receipt.</h2>  
+
+                    <table style={{ visibility: "hidden" }}>
                         <tbody>
                             <tr>
                                 <td colSpan="2">

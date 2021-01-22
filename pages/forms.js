@@ -189,7 +189,7 @@ export default function Forms() {
                             <div className="divContent">
                                 <label>Email Address</label>
                                 <br/>
-                                <input type="email" name="emailAddress" className="myInput" value={nameValue.emailAddress || "" } onChange={handleNameChange} />
+                                <input type="email" name="emailAddress" className="myInput" value={nameValue.emailAddress || "" } onChange={handleNameChange} required />
                             </div>
                             <br/>
                             <input className="btnSubmit" type="submit" value="SUBMIT" />

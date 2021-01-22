@@ -74,7 +74,36 @@ export default function Summary() {
             console.error("ERROR", e);
         }
 
-        console.log("Order complete!");
+        console.log("Email sent");
+
+        sendReceiptEmail();
+    }
+
+    function sendReceiptEmail() {
+        console.log("Test function was fired.");
+
+        try {
+            fetch('/api/receipt-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    name: nameValue.fullName, 
+                    shipping: nameValue.shipping, 
+                    courier: nameValue.courier, 
+                    address: nameValue.address, 
+                    phone: nameValue.phoneNumber, 
+                    landmark: nameValue.landmark, 
+                    emailAddress: nameValue.emailAddress, 
+                    totalPrice: nameValue.price,
+    
+                    order: cartItems,
+                    customer: customerInfo
+                })
+            });
+        }
+        catch (e) {
+            console.error("ERROR", e);
+        }
     }
 
     return (
