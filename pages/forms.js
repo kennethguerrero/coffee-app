@@ -147,7 +147,11 @@ export default function Forms() {
                                     <option value="Outside Metro Manila">Outside Metro Manila</option>
                                 </select>&nbsp;
 
-                                <select name="courier" value={nameValue.courier} onChange={handleNameChange} style={{ display: isManila ? "inline" : "none" }} required={ isManila ? true : false }>
+                                <span style={{ display: isManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
+                                    Booking care of customer.
+                                </span>
+
+                                <select name="courier" value={nameValue.courier} onChange={handleNameChange} style={{ display: isManila ? "none" : "none" }} required={ isManila ? false : false }>
                                     <option value=""></option>
                                     {/* <option value="Fifth Express">Fifth Express</option> */}
                                     <option value="Grab">Grab</option>
@@ -161,8 +165,10 @@ export default function Forms() {
                                 <span style={{ display: isGrabMove ? "inline" : "none", fontSize: "13px", color: "green" }}>
                                     Booking care of customer.
                                 </span>
+
                                 <span style={{ display: outsideManila ? "inline" : "none", fontSize: "13px", color: "green" }}>
-                                    Courier: <strong>LBC</strong> - &#8369;300.00
+                                    {/* Courier: <strong>LBC</strong> - &#8369;300.00 */}
+                                    Shipping fee not yet included. Final price will be sent to you via text/message/email.
                                 </span>
 
                                 <span className="message" style={{ display: isColdBrewProvince ? "block": "none" }}>
