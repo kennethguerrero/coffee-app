@@ -179,7 +179,7 @@ export default function Summary() {
                         <div>
                             {nameValue.shipping}&nbsp; 
                             <span style={{ display: isManila ? "inline" : "none" }}>
-                                ({nameValue.courier})
+                                {nameValue.courier}
                             </span>
                         </div>
                     </div>
