@@ -40,7 +40,8 @@ export default function Forms() {
                 }
             }
             else {
-                convertedShipFee = 300;
+                // convertedShipFee = 300;
+                convertedShipFee = 0;
             }
             
             const totalPrice = convertedShipFee + parsed.totalPriceOnCart;
@@ -185,7 +186,7 @@ export default function Forms() {
                             <div className="divContent">
                                 <label>Phone Number</label>
                                 <br/>
-                                <input type="text" name="phoneNumber" className="myInput" value={nameValue.phoneNumber || "" } onChange={handleNameChange} required />
+                                <input type="tel" name="phoneNumber" className="myInput" value={nameValue.phoneNumber || "" } onChange={handleNameChange} required />
                             </div>
                             <div className="divContent">
                                 <label>Landmarks and Remarks</label>
