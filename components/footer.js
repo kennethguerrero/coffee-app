@@ -79,7 +79,12 @@ const Footer = () => (
             <div className="divFooterContent">
                 <div>Contact Us</div>
                 <div>
-                <a href="mailto:btngn.ph@gmail.com? Subject=Online%Feedback">
+                    <Link href="/feedback">
+                        <a>Feedback</a>
+                    </Link>
+                </div>
+                <div>
+                    <a href="mailto:btngn.ph@gmail.com? Subject=Online%Feedback">
                         <img src="/iconMail.png" />
                     </a>
                 </div>

@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function About() {
     return (
@@ -37,7 +38,13 @@ export default function About() {
                         </tbody>
                     </table>
 
-                    <h2 style={{ textAlign: "center" }}>Thank You, Barakos!</h2>
+                    <h4 style={{ textAlign: "center" }}>
+                        We'd love to hear your&nbsp;
+                        <Link href="/feedback">
+                            <a>feedback!</a>
+                        </Link>
+                    </h4>
+                    <h2 style={{ textAlign: "center" }}>Thank You!</h2>
 
                 </main>
                 
