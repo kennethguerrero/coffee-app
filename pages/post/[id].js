@@ -72,7 +72,7 @@ const UserInput = () => {
                     coffeePrice = 50;
                     break;
                 case "90g":
-                    coffeePrice = 80;
+                    coffeePrice = 85;
                     break;
                 case "100g":
                     coffeePrice = 90;
@@ -135,7 +135,7 @@ const UserInput = () => {
             coffeePrice = 50;
             break;
         case "90g":
-            coffeePrice = 80;
+            coffeePrice = 85;
             break;
         case "100g":
             coffeePrice = 90;
