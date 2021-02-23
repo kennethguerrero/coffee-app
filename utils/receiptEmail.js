@@ -4,7 +4,7 @@ import { getMaxListeners } from "process";
 const sendEmail = async ({ name, shipping, courier, address, phone, landmark, emailAddress, totalPrice, order, customer }) => {
 
     const email = emailAddress;
-    const SENDGRID_API_KEY = 'api-key-here';
+    const SENDGRID_API_KEY = 'ap-key-here';
     const SENDGRID_API = 'https://api.sendgrid.com/v3/mail/send';
 
     try {
@@ -24,10 +24,10 @@ const sendEmail = async ({ name, shipping, courier, address, phone, landmark, em
                         ],
                         bcc: [
                             {
-                               email : "kenetguerrero@gmail.com"
+                               "email" : "kenetguerrero@gmail.com"
                             },
                             {
-                                email: "templejoana@gmail.com"
+                                "email" : "templejoana@gmail.com"
                             }
                         ],
                         "dynamic_template_data":{
