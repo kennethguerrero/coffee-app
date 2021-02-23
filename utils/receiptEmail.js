@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { getMaxListeners } from "process";
 
 const sendEmail = async ({ name, shipping, courier, address, phone, landmark, emailAddress, totalPrice, order, customer }) => {
 
@@ -16,15 +17,23 @@ const sendEmail = async ({ name, shipping, courier, address, phone, landmark, em
             body: JSON.stringify({
                 personalizations: [
                     {
-                        to: [
+                        to:  [
                             {
                                 email
+                            }
+                        ],
+                        bcc: [
+                            {
+                               email : "kenetguerrero@gmail.com"
+                            },
+                            {
+                                email: "templejoana@gmail.com"
                             }
                         ],
                         "dynamic_template_data":{
                             "order" : order,
                             "customer" : customer
-                        }
+                        },
                     }
                 ],
                 from: {
