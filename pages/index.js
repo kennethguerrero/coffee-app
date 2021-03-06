@@ -26,12 +26,18 @@ export default function Home() {
                     </div> */}
 
                     <div className="grid">
-                        <a href="/setspackage" className="card">
-                            <img src="https://btngn.com/Products-Sets-2.png" />
-                            <h3>NEW PRODUCT SETS &rarr;</h3>
-                            <p>Check out our new collection that is perfect for your event.</p>
+                        <a href="/newsRaffle" className="card">
+                            <img src="/news-raffle.jpg" id="img-raffle" />
+                            <h3>The Awesome Barako Raffle &rarr;</h3>
+                            <p>Get a chance to win a special set from us!</p>
                         </a>
                     </div>
+
+                    <a href="/setspackage" className="card">
+                        <img src="https://btngn.com/Products-Sets-2.png" />
+                        <h3>NEW PRODUCT SETS &rarr;</h3>
+                        <p>Check out our new collection that is perfect for your event.</p>
+                    </a>
 
                     <a href="https://www.wheninmanila.com/stores-that-offer-good-drip-coffee/" target="_blank" className="card">
                         <img src="/newsFERN.png" />
@@ -43,6 +49,12 @@ export default function Home() {
                         <img src="/newsPreview.PNG" />
                         <h3>We made it to PREVIEW's List! &rarr;</h3>
                         <p>We are number seven on the list of instagram shops where you can buy premium quality drip coffee.</p>
+                    </a>
+
+                    <a href="/news1" className="card">
+                        <img src="/newsDripHow.PNG" />
+                        <h3>Barako Drip &rarr;</h3>
+                        <p>Here's how to take our Barako Drip.</p>
                     </a>
 
                     {/* <a href="https://www.instagram.com/p/CETm10zH5YB/" target="_blank" className="card">
@@ -57,16 +69,10 @@ export default function Home() {
                         <p>Check us out on BeautyMNL’s Wellness Section under Drinks</p>
                     </a>
 
-                    <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh" className="card" target="_blank">
+                    <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh/products/kapeng-barako" className="card" target="_blank">
                         <img src="/newsNaturale.jpg" />
                         <h3>Naturale Market &rarr;</h3>
                         <p>Yes to Local and Sustainable Living!</p>
-                    </a>
-
-                    <a href="/news1" className="card">
-                        <img src="/newsDripHow.PNG" />
-                        <h3>Barako Drip &rarr;</h3>
-                        <p>Here's how to take our Barako Drip.</p>
                     </a>
 
                     <a href="news2" className="card">
@@ -209,6 +215,14 @@ export default function Home() {
 
                 * {
                 box-sizing: border-box;
+                }
+
+                @media (min-width: 580px)
+                {
+                    #img-raffle
+                    {
+                        min-width: 500px;
+                    }
                 }
             `}</style>
         </div>
