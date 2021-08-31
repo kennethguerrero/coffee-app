@@ -81,7 +81,8 @@ export default function SetsPackage ({ products }) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch("https://www.json-generator.com/api/json/get/cdZcSOswfC?indent=2");
+    // const res = await fetch("https://www.json-generator.com/api/json/get/cdZcSOswfC?indent=2");
+    const res = await fetch("https://btngn.com/JsonProductSets.json");
     const products = await res.json();
 
     return {

@@ -27,7 +27,8 @@ const UserInput = () => {
             // console.log("id", id);
             // const response = await fetch("https://www.json-generator.com/api/json/get/cfxDrhicCW?indent=2");
             // const response = await fetch("https://www.json-generator.com/api/json/get/cpwzWWYfxe?indent=2");
-            const response = await fetch("https://www.json-generator.com/api/json/get/cggzsnGgrS?indent=2");
+            // const response = await fetch("https://www.json-generator.com/api/json/get/cggzsnGgrS?indent=2");
+            const response = await fetch("https://btngn.com/Products.json");
             let data
     
             try {

@@ -1,0 +1,71 @@
+[
+    {
+        "url": "https://btngn.com/Products-Beans.JPG",
+        "description": "A bag of coffee bean with a robust flavor.",
+        "densities": [
+            "50g",
+            "200g",
+            "300g"
+        ],
+        "name": "Barako Beans",
+        "id": 1
+    },
+    {
+        "url": "https://btngn.com/Products-Ground.JPG",
+        "description": "A bag of fine ground coffee with a robust flavor.",
+        "densities": [
+            "50g",
+            "100g",
+            "200g",
+            "300g",
+            "500g"
+        ],
+        "name": "Barako Ground",
+        "id": 2
+    },
+    {
+        "url": "https://btngn.com/Products-Tablea.JPG",
+        "description": "A bag of pure unsweetened tablea.",
+        "densities": [
+            "90g"
+        ],
+        "name": "Tablea de Cacao",
+        "id": 3
+    },
+    {
+        "url": "https://btngn.com/Products-Pepper.JPG",
+        "description": "A bag of freshly ground black pepper.",
+        "densities": [
+            "50g"
+        ],
+        "name": "Black Pepper",
+        "id": 4
+    },
+    {
+        "url": "https://btngn.com/Products-Drip.JPG",
+        "description": "10 drip bags of instant kapeng barako.",
+        "densities": [
+            "10bags"
+        ],
+        "name": "Barako Drip",
+        "id": 5
+    },
+    {
+        "url": "https://btngn.com/Products-Solo.JPG",
+        "description": "Barako Drip in a solo bag.",
+        "densities": [
+            "10g"
+        ],
+        "name": "Drip Solo",
+        "id": 6
+    },
+    {
+        "url": "https://btngn.com/Products-ColdBrew.JPG",
+        "description": "100% Kapeng Barako brewed cold for 24 hours.",
+        "densities": [
+            "350ml"
+        ],
+        "name": "Cold Brew",
+        "id": 7
+    }
+]
