@@ -176,10 +176,10 @@ const UserInput = () => {
         return <option key={opt} value={opt}>{opt}</option>
     })
 
-    let isSoldOut = false;
+    let isSoldOut = true;
     let i = product.id;
     for (i = 0; i <= 7; i++) {
-        isSoldOut = false;
+        isSoldOut = true;
     }
 
     let isColdBrew;

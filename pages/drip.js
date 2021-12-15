@@ -117,7 +117,7 @@ const PageDrip = () => {
         //console.log(coffeePrice);
     }
 
-    let isSoldOut = false;
+    let isSoldOut = true;
 
     return (
         <Layout>

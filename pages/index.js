@@ -25,11 +25,19 @@ export default function Home() {
                         </a>
                     </div> */}
 
-                    <div className="grid">
+                    {/* <div className="grid">
                         <a href="/newsRaffle" className="card">
                             <img src="/news-raffle.jpg" id="img-raffle" />
                             <h3>The Awesome Barako Raffle &rarr;</h3>
                             <p>Get a chance to win a special set from us!</p>
+                        </a>
+                    </div> */}
+
+                    <div className="grid">
+                        <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
+                            <img src="/newsBeauty.jpg" />
+                            <h3>We Are In BeautyMNL! &rarr;</h3>
+                            <p>Check us out on BeautyMNL’s Wellness Section under Drinks</p>
                         </a>
                     </div>
 
@@ -62,18 +70,12 @@ export default function Home() {
                         <h3>Calling all plants and coffee lovers! &rarr;</h3>
                         <p>In collaboration with Fern Manila, we are giving away free Barako Drips.</p>
                     </a> */}
-
-                    <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
-                        <img src="/newsBeauty.jpg" />
-                        <h3>We Are In BeautyMNL! &rarr;</h3>
-                        <p>Check us out on BeautyMNL’s Wellness Section under Drinks</p>
-                    </a>
-
-                    <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh/products/kapeng-barako" className="card" target="_blank">
+                    
+                    {/* <a href="https://www.thenaturalemarket.com/collections/scoop-and-weigh/products/kapeng-barako" className="card" target="_blank">
                         <img src="/newsNaturale.jpg" />
                         <h3>Naturale Market &rarr;</h3>
                         <p>Yes to Local and Sustainable Living!</p>
-                    </a>
+                    </a> */}
 
                     <a href="news2" className="card">
                         <img src="/newsDripSolo.PNG" />

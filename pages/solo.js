@@ -117,7 +117,7 @@ const PageSolo = () => {
         [nameValue]
     );
 
-    let isSoldOut = false;
+    let isSoldOut = true;
 
     return (
         <Layout>

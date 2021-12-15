@@ -111,7 +111,7 @@ const PageBeans = () => {
         [nameValue]
     );
 
-    let isSoldOut = false;
+    let isSoldOut = true;
 
     return (
         <Layout>
