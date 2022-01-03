@@ -176,10 +176,10 @@ const UserInput = () => {
         return <option key={opt} value={opt}>{opt}</option>
     })
 
-    let isSoldOut = true;
+    let isSoldOut = false;
     let i = product.id;
     for (i = 0; i <= 7; i++) {
-        isSoldOut = true;
+        isSoldOut = false;
     }
 
     let isColdBrew;
@@ -309,7 +309,7 @@ const UserInput = () => {
                         transition: .5s ease;
                     }
                     #txtQuantity {
-                        width: 62px;
+                        width: 70px;
                     }
                     input {
                         text-align: center;

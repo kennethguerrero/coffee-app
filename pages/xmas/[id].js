@@ -97,7 +97,7 @@ const DynamicData = () => {
     let isSoldOut = false;
     let i = product.id;
     for (i = 0; i <= 4; i++) {
-        isSoldOut = true;
+        isSoldOut = false;
     }
 
     return (
@@ -209,7 +209,7 @@ const DynamicData = () => {
                         transition: .5s ease;
                     }
                     #txtQuantity {
-                        width: 62px;
+                        width: 70px;
                     }
                     input {
                         text-align: center;

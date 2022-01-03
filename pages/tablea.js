@@ -111,7 +111,7 @@ const PageTablea = () => {
         //console.log(coffeePrice);
     }
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -222,7 +222,7 @@ const PageTablea = () => {
                         transition: .5s ease;
                     }
                     #txtQuantity {
-                        width: 62px;
+                        width: 70px;
                     }
                     input {
                         text-align: center;

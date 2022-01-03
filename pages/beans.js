@@ -111,7 +111,7 @@ const PageBeans = () => {
         [nameValue]
     );
 
-    let isSoldOut = true;
+    let isSoldOut = false;
 
     return (
         <Layout>
@@ -224,7 +224,7 @@ const PageBeans = () => {
                         transition: .5s ease;
                     }
                     #txtQuantity {
-                        width: 62px;
+                        width: 70px;
                     }
                     input {
                         text-align: center;

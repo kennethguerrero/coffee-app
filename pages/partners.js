@@ -16,7 +16,7 @@ export default function Partners() {
                     </h1>
 
                     <div className="grid">
-                        <a href="https://beautymnl.com/" target="_blank" className="card">
+                        <a href="https://beautymnl.com/brands/btngn" target="_blank" className="card">
                             <h3>BeautyMNL</h3>
                             <div className="imgPartner"><img src="/partnerBeauty.png"/></div>
                             <p>
@@ -24,7 +24,7 @@ export default function Partners() {
                             </p>
                         </a>
 
-                        <a href="https://www.thenaturalemarket.com/" target="_blank" className="card">
+                        {/* <a href="https://www.thenaturalemarket.com/" target="_blank" className="card">
                             <h3>The Naturale Market</h3>
                             <div className="imgPartner"><img src="/partnerNaturale.png" /></div>
                             <p>
@@ -38,7 +38,7 @@ export default function Partners() {
                             <p>
                                 Barbero at Barako offers quality barber services at a very reasonable price. They make sure that each of their customers experience a comfortable and relaxing environment with a cup of freshly brewed barako at hand. Their branch is located at V Walk Commercial Center, Romana Pangan Hi-Way Floridablanca, Pampanga. 
                             </p>
-                        </a>
+                        </a> */}
                         
                     </div>
 
